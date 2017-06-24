@@ -62,6 +62,13 @@ $(document).ready(function() {
             nameChange(Emilie.name, Emilie.color);
         }
 
+        // The BG is also independant :/ Oh well...
+        if (magicNum > 3) {
+            bgChange(BG.hell);
+        } else {
+            bgChange(BG.room);
+        }
+
     });
 
     var text_1 = "The text 1";
@@ -88,6 +95,11 @@ $(document).ready(function() {
 
     function nameChange(theName, theColor) {
         $("h3").text(theName);
+        $("p").css("color", theColor);
+    }
+
+    function bgChange(theBG) {
+        $(".main").css("background-image", "url('" + theBG + "')");
     }
 
 
