@@ -1,6 +1,8 @@
 body,
 html {
     height: 100%;
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .main {
@@ -19,21 +21,48 @@ html {
 
 .bottom {
     height: 200px;
-    background-color: #bad455;
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100vw;
 }
 
 .text-box {
     display: flex;
+    height: 100%;
+    padding: 20px 30px 20px 50px;
 }
 
 .text-content {
     width: 80vw;
-    border: 1px solid greenyellow;
+    padding-right: 40px;
 }
 
-.button {
-    width: 20vw;
+.button-box {
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+}
+
+button,
+button:focus,
+bouton:active {
+    width: 10vw;
+    padding: 10px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+}
+
+button:hover {
+    width: 10vw;
+    padding: 10px;
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
 }
 
 .top {
@@ -57,6 +86,6 @@ html {
     background-color: teal;
 }
 
-.text-box {
-    padding: 30px;
+h3 {
+    font-family: "Amaranth", sans-serif;
 }

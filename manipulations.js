@@ -2,14 +2,14 @@ var Emilie = {
     name: "Emilie",
     happy: "img/emi-happy.png",
     sad: "img/emi-sad.png",
-    color: "#bad455"
+    color: "#D893EE"
 };
 
 var JSMonster = {
     name: "The Lord of Javascript",
     neutral: "img/js-neutral.png",
     threatning: "img/js-threatning.png",
-    color: "#2444e2"
+    color: "#93A4EE"
 };
 
 var BG = {
@@ -96,6 +96,7 @@ $(document).ready(function() {
     function nameChange(theName, theColor) {
         $("h3").text(theName);
         $("p").css("color", theColor);
+        $("h3").css("color", theColor);
     }
 
     function bgChange(theBG) {
