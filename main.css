@@ -34,15 +34,15 @@
 }
 
 .char1 {
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    width: 300px;
     /*This is a box in which I'll put images with transparent BG!*/
     background-color: purple;
 }
 
 .char2 {
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    width: 300px;
     /*This is a box in which I'll put images with transparent BG!*/
     background-color: teal;
 }

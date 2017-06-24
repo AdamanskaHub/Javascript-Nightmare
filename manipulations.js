@@ -24,33 +24,35 @@ var BG = {
 
 $(document).ready(function() {
 
-    function bgChange(theBG) {
-
-        // $(".main").
-    }
-
     var magicNum = 0;
 
     var path_a = false;
     var path_b = true;
 
     $('button').on('click', function() {
-        // je balance toutes les fonctions
         // changer BG
-        // changer persos
         magicNum++;
         console.log(magicNum);
 
         // change le texte
-
         if (path_a) {
             textChange("text", "a");
-
         }
         if (magicNum > 4 && path_b) {
             textChange("text", "b");
+            // changer persos
+        } else {
+            textChange("text", "");
+        }
 
-        } else { textChange("text", ""); }
+        // the changes in characters expressions must be made separated from the text as
+        // they do not change together
+        if (magicNum === 4 || magicNum === 3) {
+            char1Change('img/emi-sad.png');
+        } else {
+            char1Change('img/emi-happy.png');
+        }
+
     });
 
     var text_1 = "The text 1";
@@ -69,9 +71,10 @@ $(document).ready(function() {
     function textChange(textPlaceHolder, path) {
         $("p").text(eval(textPlaceHolder + "_" + path + magicNum));
         console.log(textPlaceHolder + "_" + path + magicNum);
-        // if (magicNum === 4) {
-        //     $("p").text(eval(textPlaceHolder + path + "_" + magicNum));
-        // }
+    }
+
+    function char1Change(theImage) {
+        $("#char1").attr('src', theImage);
     }
 
 
