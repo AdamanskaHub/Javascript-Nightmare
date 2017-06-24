@@ -36,6 +36,7 @@ $(document).ready(function() {
 
         // change le texte
         if (path_a) {
+            nameChange(Emilie.name);
             textChange("text", "a");
         }
         if (magicNum > 4 && path_b) {
@@ -48,9 +49,17 @@ $(document).ready(function() {
         // the changes in characters expressions must be made separated from the text as
         // they do not change together
         if (magicNum === 4 || magicNum === 3) {
-            char1Change('img/emi-sad.png');
+            char1Change(Emilie.sad);
         } else {
-            char1Change('img/emi-happy.png');
+            char1Change(Emilie.happy);
+        }
+
+        // Also separating the names as they do not change with images or text
+        // but do change with colour
+        if (magicNum > 2 && magicNum < 6) {
+            nameChange(JSMonster.name, JSMonster.color);
+        } else {
+            nameChange(Emilie.name, Emilie.color);
         }
 
     });
@@ -75,6 +84,10 @@ $(document).ready(function() {
 
     function char1Change(theImage) {
         $("#char1").attr('src', theImage);
+    }
+
+    function nameChange(theName, theColor) {
+        $("h3").text(theName);
     }
 
 
