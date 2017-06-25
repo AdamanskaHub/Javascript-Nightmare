@@ -103,11 +103,15 @@ button:hover {
 
 .char2 {
     height: 400px;
-    width: 300px;
+    width: 350px;
     /*This is a box in which I'll put images with transparent BG!
     background-color: teal;*/
 }
 
 h3 {
     font-family: "Amaranth", sans-serif;
+}
+
+.border {
+    border: 2px solid #bad455;
 }

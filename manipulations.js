@@ -75,15 +75,16 @@ $(document).ready(function() {
 
         var js = nameChange(JSMonster.name, JSMonster.color);
         var txt = textChange("text", "");
+        var emi = nameChange(Emilie.name, Emilie.color);
 
         switch (magicNum) {
             case 1:
                 nameChange("Mosquito", '#fff');
-                // char2Change("img/mosquito.png");
+                char2Change("img/mosquito.png");
                 break;
             case 2:
                 bgChange(BG.room);
-                js;
+                nameChange(JSMonster.name, JSMonster.color);
                 txt;
                 break;
             case 3:
@@ -92,33 +93,80 @@ $(document).ready(function() {
                 break;
             case 4:
                 $("#char2").fadeOut();
-                nameChange(Emilie.name, Emilie.color);
+                emi;
                 bgChange(BG.hell);
                 char1Change(Emilie.grumpy);
                 // char2Change("");
                 break;
             case 5:
                 char1Change(Emilie.surprised);
-                nameChange(Emilie.name, Emilie.color);
+                emi;
                 break;
             case 6:
-                js;
+                nameChange(JSMonster.name, JSMonster.color);
                 txt;
+                char2Change(JSMonster.neutral);
+                $("char2").fadeIn();
                 break;
             case 7:
-                js;
+                nameChange(JSMonster.name, JSMonster.color);
                 txt;
                 break;
             case 9:
-                js;
+                nameChange(JSMonster.name, JSMonster.color);
                 txt;
                 break;
             case 11:
+                nameChange(JSMonster.name, JSMonster.color);
+                txt;
+                break;
+            case 14:
+                $("#char2").addClass("border");
+                txt;
+                break;
+            case 15:
+                $("#char2").removeClass("border");
+                txt;
+                nameChange(JSMonster.name, JSMonster.color);
+                break;
+            case 16:
+                txt;
+                js;
+                addButtons(
+                    "About to tell me why I'm here and how I get out",
+                    "Disgrace, hell, stuff like that"
+                );
+                $('#button1').on('click', function() {
+                    path_a = true;
+                    deleteButtons();
+                });
+                $('#button2').on('click', function() {
+                    path_b = true;
+                    deleteButtons;
+                });
+                break;
+            case 17:
+                nameChange(JSMonster.name, JSMonster.color);
+                if (path_a) {
+                    textChange("text", "a");
+                } else if (path_b) {
+                    textChange("text", "b");
+                }
+                break;
+            case 18:
+                js;
+                txt;
+                break;
+            case 20:
+                js;
+                txt;
+                break;
+            case 21:
                 js;
                 txt;
                 break;
             default:
-                nameChange(Emilie.name, Emilie.color);
+                emi;
                 textChange("text", "");
                 break;
         }
@@ -143,6 +191,7 @@ $(document).ready(function() {
 
     function char2Change(theImage) {
         $("#char2").attr('src', theImage);
+        $("#char2").css("display", "block")
     }
 
     function nameChange(theName, theColor) {
@@ -153,6 +202,19 @@ $(document).ready(function() {
 
     function bgChange(theBG) {
         $(".main").css("background-image", "url('" + theBG + "')");
+    }
+
+    // this locks me with two buttons, but in my case that's fine
+    function addButtons(value1, value2) {
+        var b1 = $("<button id='button1'>" + value1 + "</button>");
+        $(".button-space").append(b1);
+        var b2 = $("<button id='button1'>" + value1 + "</button>");
+        $(".button-space").append(b2);
+    }
+
+    function deleteButtons() {
+        $("#button1").delete();
+        $("#button2").delete();
     }
 
 
