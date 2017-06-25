@@ -106,7 +106,7 @@ $(document).ready(function() {
                 nameChange(JSMonster.name, JSMonster.color);
                 txt;
                 char2Change(JSMonster.neutral);
-                $("char2").fadeIn();
+                $("char2").fadeIn(2000);
                 break;
             case 7:
                 nameChange(JSMonster.name, JSMonster.color);
@@ -131,20 +131,28 @@ $(document).ready(function() {
                 break;
             case 16:
                 txt;
-                js;
+                nameChange(JSMonster.name, JSMonster.color);
                 addButtons(
-                    "About to tell me why I'm here and how I get out",
+                    "About to tell me how I get out",
                     "Disgrace, hell, stuff like that"
                 );
+                $("#next").hide();
                 $('#button1').on('click', function() {
-                    path_a = true;
+                    { path_a = true; }
+                    console.log("a = " + path_a);
+                    // magicNum++;
+                    console.log(magicNum);
                     deleteButtons();
+                    $("#next").show();
                 });
                 $('#button2').on('click', function() {
-                    path_b = true;
-                    deleteButtons;
+                    { path_b = true; }
+                    deleteButtons();
+                    $("#next").show();
                 });
+                // I'm not clicking next and can't increase my count!
                 break;
+
             case 17:
                 nameChange(JSMonster.name, JSMonster.color);
                 if (path_a) {
@@ -153,12 +161,13 @@ $(document).ready(function() {
                     textChange("text", "b");
                 }
                 break;
+
             case 18:
-                js;
+                nameChange(JSMonster.name, JSMonster.color);
                 txt;
                 break;
             case 20:
-                js;
+                nameChange(JSMonster.name, JSMonster.color);
                 txt;
                 break;
             case 21:
@@ -208,15 +217,18 @@ $(document).ready(function() {
     function addButtons(value1, value2) {
         var b1 = $("<button id='button1'>" + value1 + "</button>");
         $(".button-space").append(b1);
-        var b2 = $("<button id='button1'>" + value1 + "</button>");
+        var b2 = $("<button id='button2'>" + value2 + "</button>");
         $(".button-space").append(b2);
     }
 
     function deleteButtons() {
-        $("#button1").delete();
-        $("#button2").delete();
+        $("#button1").remove();
+        $("#button2").remove();
     }
 
+    function nextOff() {
+        $("#next").css('pointer-events', 'none');
+    }
 
 
 }); // end of doc ready

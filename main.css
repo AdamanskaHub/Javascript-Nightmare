@@ -83,7 +83,7 @@ button:hover {
     border: 2px solid #333;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-    width: none;
+    width: 100%;
 }
 
 .button-space>button:hover {

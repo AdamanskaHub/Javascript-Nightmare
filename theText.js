@@ -15,6 +15,7 @@ var text_14 = "$('JSLord').css('border', '2px solid #bad455');";
 var text_15 = "I'm the Lord of PURE JAVASCRIPT !!!! STOP THIS BLASPHEMY AT ONCE!!!";
 var text_16 = "Where was I...";
 // ========== CHOICE ========
+var text_17 = "KOOKOOKOKOKO";
 var text_a17 = "If you hadn't interrupted me, I was about to explain.";
 var text_b17 = "You should not take it so lightly... Heed my warning.";
 // ========== CHOICE ======== //
