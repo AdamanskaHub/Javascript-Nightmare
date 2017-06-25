@@ -1,0 +1,109 @@
+7
+E
+What do you mean ? Javascript Hell ? 
+
+8
+JS
+I'm the JS Lord. I've been observing you.
+
+9
+JS
+You are a DISGRACE ! You barely have a grasp of Jquery. You don't even understand what a forEach loop is.
+You still haven't understood what a function object is.
+
+10
+E 
+Well, it's hard. I'm doing my best but...I'm doing fine with Jquery.
+Look.
+
+11
+E
+$('JSLord').css('border', '1px solid #bad455');
+
+11
+JS
+I'm the Lord of PURE JAVASCRIPT !!!! STOP THIS BLASPHEMY AT ONCE!!!
+
+12
+JS
+Where was I...
+
+13
+E
+About to tell me why I'm here and, more importantly, how I get out.
+Disgrace, hell, stuff like that. 
+
+14 A
+JS
+If you hadn't interrupted me, I was about to explain.
+14 B
+JS
+You should not take it so lightly... Heed my warning.
+
+15
+JS
+This is your last chance to right your wrongs...
+
+16
+E
+I did nothing wrong.
+
+17
+JS
+Enough ! 
+Can't you just focus and listen for two minutes?!
+
+18
+JS
+This is probably why you can't get your head around function constructor.
+
+19
+E
+That's mean...
+
+20
+JS
+Follow the path to redemption. You will have to face three trials. Succeed in all of them and I will release you. Fail and you will be stuck here forever.
+
+21
+E 
+It's not *that* bad here you know.
+
+22
+JS
+And you will spend your days debugging 
+23
+complex
+24
+vanilla Javascript.
+
+// SHAKE
+
+24
+E 
+OH NO !!!!! Can't I die instead ? Can we talk about alternatives ? I have money ! 
+
+25
+JS
+BWWHAAAAAAHAAAAAAHAAAAAAHAAAAAAAA
+
+// FADE OUT
+
+26
+E 
+Ok ok... Let's not succomb to panic.
+
+27
+E
+There must be a way out.
+
+//FADE IN
+
+28
+JS
+Here is your first trial !
+
+// MINION SLIDES IN
+29
+
+

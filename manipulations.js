@@ -1,3 +1,7 @@
+// ============================================
+// ============== CHARACTERS ==================
+// ============================================
+
 var Emilie = {
     name: "Emilie",
     happy: "img/emi-happy.png",
@@ -12,10 +16,40 @@ var JSMonster = {
     color: "#93A4EE"
 };
 
+var Ajax = {
+    name: "Ajax",
+    neutral: "img/js-neutral.png",
+    threatning: "img/js-threatning.png",
+    color: "#93A4EE"
+};
+
+var Closure = {
+    name: "Closure",
+    neutral: "img/js-neutral.png",
+    threatning: "img/js-threatning.png",
+    color: "#93A4EE"
+};
+
+var RegEx = {
+    name: "RegEx",
+    neutral: "img/js-neutral.png",
+    threatning: "img/js-threatning.png",
+    color: "#93A4EE"
+};
+
 var BG = {
     room: "img/bg-room.png",
     hell: "img/bg-hell.png"
 
+};
+
+var sounds = {
+    sleep: "img/bg-room.png",
+    hell: "img/bg-hell.png",
+    round1: "",
+    round2: "",
+    round3: "",
+    final: ""
 };
 
 // ============================================
@@ -24,43 +58,77 @@ var BG = {
 
 $(document).ready(function() {
 
-    var magicNum = 0;
+    var magicNum = 1;
 
     var path_a = false;
-    var path_b = true;
+    var path_b = false;
 
     $('button').on('click', function() {
-        // changer BG
+
         magicNum++;
         console.log(magicNum);
 
-        // change le texte
-        if (path_a) {
-            nameChange(Emilie.name);
-            textChange("text", "a");
-        }
-        if (magicNum > 4 && path_b) {
-            textChange("text", "b");
-            // changer persos
-        } else {
-            textChange("text", "");
+        var js = nameChange(JSMonster.name, JSMonster.color);
+        var txt = textChange("text", "");
+
+        switch (magicNum) {
+            case 2:
+                nameChange(JSMonster.name, JSMonster.color);
+                textChange("text", "");
+                break;
+            case 3:
+                nameChange("Mosquito");
+                textChange("text", "");
+                break;
+            case 4:
+                nameChange(Emilie.name, Emilie.color);
+                textChange("text", "");
+                break;
+            case 6:
+                nameChange(JSMonster.name, JSMonster.color);
+                textChange("text", "");
+                break;
+            case 7:
+                nameChange(JSMonster.name, JSMonster.color);
+                textChange("text", "");
+                break;
+            case 9:
+                js;
+                txt;
+                break;
+            case 11:
+                js;
+                txt;
+                break;
+            default:
+                nameChange(Emilie.name, Emilie.color);
+                textChange("text", "");
+                break;
         }
 
         // the changes in characters expressions must be made separated from the text as
         // they do not change together
-        if (magicNum === 4 || magicNum === 3) {
-            char1Change(Emilie.sad);
-        } else {
-            char1Change(Emilie.happy);
+        switch (magicNum) {
+            case 2:
+                char1Change(Emilie.sad);
+                break;
+            case 3:
+                char1Change(Emilie.sad);
+                break;
+
+            default:
+                char1Change(Emilie.happy);
+                break;
         }
+
 
         // Also separating the names as they do not change with images or text
         // but do change with colour
-        if (magicNum > 2 && magicNum < 6) {
-            nameChange(JSMonster.name, JSMonster.color);
-        } else {
-            nameChange(Emilie.name, Emilie.color);
-        }
+        // if (magicNum > 2 && magicNum < 6) {
+        //     nameChange(JSMonster.name, JSMonster.color);
+        // } else {
+        //     nameChange(Emilie.name, Emilie.color);
+        // }
 
         // The BG is also independant :/ Oh well...
         if (magicNum > 3) {
@@ -71,22 +139,9 @@ $(document).ready(function() {
 
     });
 
-    var text_1 = "The text 1";
-    var text_2 = "The text 2";
-    var text_3 = "The text 3";
-    var text_4 = "The text 4";
-
-    var text_a4 = "The text a0";
-    var text_a5 = "The text a1";
-    var text_a6 = "The text a2";
-
-    var text_b4 = "The text b0";
-    var text_b5 = "The text b1";
-    var text_b6 = "The text b2";
-
     function textChange(textPlaceHolder, path) {
         $("p").text(eval(textPlaceHolder + "_" + path + magicNum));
-        console.log(textPlaceHolder + "_" + path + magicNum);
+        // console.log(textPlaceHolder + "_" + path + magicNum);
     }
 
     function char1Change(theImage) {
