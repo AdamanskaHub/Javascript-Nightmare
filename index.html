@@ -5,19 +5,19 @@
 <head>
 
     <title>The JS Nightmare</title>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="A game about stuff yet to be defined">
-    <!--Page description. No longer than 155 characters.-->
     <meta name="keywords" content="Visual Novel">
     <meta name="author" content="Emilie">
 
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="animate.css">
     <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jquery.lettering.js"></script>
     <script src="manipulations.js"></script>
     <script src="theText.js"></script>
 
@@ -29,10 +29,18 @@
         <div class="top">
             <div class="char1">
                 <!-- Char 1 left -->
-                <img id="char1" src="img/emi-happy.png" alt="emihappy">
+                <img id="char1" src="img/emi-sleeping.png" alt="emisleep">
             </div>
+
+            <div class="button-space">
+                <button id="button1"></button>
+                <button id="button2"></button>
+            </div>
+
             <div class="char2">
                 <!-- Char 2 right -->
+                <img id="char2" src="img/mosquito.png">
+                <!-- there's no alt ON PURPOSE -->
             </div>
         </div>
 
@@ -40,9 +48,9 @@
             <!-- BOTTOM PART -->
             <div class="text-box">
                 <div class="text-content">
-                    <h3>""</h3>
+                    <h3></h3>
                     <!-- the main text -->
-                    <p>Texte de démarrage</p>
+                    <p data-in-effect="rollIn'">Somewhere in Barcelona, on a hot summer night.</p>
                 </div>
                 <div class="button-box">
                     <!-- the button -->

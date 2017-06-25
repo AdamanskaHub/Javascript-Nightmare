@@ -6,6 +6,9 @@ var Emilie = {
     name: "Emilie",
     happy: "img/emi-happy.png",
     sad: "img/emi-sad.png",
+    grumpy: "img/emi-grumpy.png",
+    surprised: "img/emi-surprised.png",
+    sleeping: "img/emi-sleeping.png",
     color: "#D893EE"
 };
 
@@ -37,15 +40,17 @@ var RegEx = {
     color: "#93A4EE"
 };
 
+var mosquito = "img/mosquito.png";
+
 var BG = {
     room: "img/bg-room.png",
-    hell: "img/bg-hell.png"
+    hell: "img/bg-hell.jpg"
 
 };
 
 var sounds = {
-    sleep: "img/bg-room.png",
-    hell: "img/bg-hell.png",
+    sleep: "music/bg-room.png",
+    hell: "music/bg-hell.png",
     round1: "",
     round2: "",
     round3: "",
@@ -58,7 +63,7 @@ var sounds = {
 
 $(document).ready(function() {
 
-    var magicNum = 1;
+    var magicNum = 0;
 
     var path_a = false;
     var path_b = false;
@@ -72,25 +77,37 @@ $(document).ready(function() {
         var txt = textChange("text", "");
 
         switch (magicNum) {
+            case 1:
+                nameChange("Mosquito", '#fff');
+                // char2Change("img/mosquito.png");
+                break;
             case 2:
-                nameChange(JSMonster.name, JSMonster.color);
-                textChange("text", "");
+                bgChange(BG.room);
+                js;
+                txt;
                 break;
             case 3:
-                nameChange("Mosquito");
-                textChange("text", "");
+                nameChange("Mosquito", '#fff');
+                txt;
                 break;
             case 4:
+                $("#char2").fadeOut();
                 nameChange(Emilie.name, Emilie.color);
-                textChange("text", "");
+                bgChange(BG.hell);
+                char1Change(Emilie.grumpy);
+                // char2Change("");
+                break;
+            case 5:
+                char1Change(Emilie.surprised);
+                nameChange(Emilie.name, Emilie.color);
                 break;
             case 6:
-                nameChange(JSMonster.name, JSMonster.color);
-                textChange("text", "");
+                js;
+                txt;
                 break;
             case 7:
-                nameChange(JSMonster.name, JSMonster.color);
-                textChange("text", "");
+                js;
+                txt;
                 break;
             case 9:
                 js;
@@ -106,46 +123,26 @@ $(document).ready(function() {
                 break;
         }
 
-        // the changes in characters expressions must be made separated from the text as
-        // they do not change together
-        switch (magicNum) {
-            case 2:
-                char1Change(Emilie.sad);
-                break;
-            case 3:
-                char1Change(Emilie.sad);
-                break;
+    }); // click button next end
 
-            default:
-                char1Change(Emilie.happy);
-                break;
-        }
-
-
-        // Also separating the names as they do not change with images or text
-        // but do change with colour
-        // if (magicNum > 2 && magicNum < 6) {
-        //     nameChange(JSMonster.name, JSMonster.color);
-        // } else {
-        //     nameChange(Emilie.name, Emilie.color);
-        // }
-
-        // The BG is also independant :/ Oh well...
-        if (magicNum > 3) {
-            bgChange(BG.hell);
-        } else {
-            bgChange(BG.room);
-        }
-
-    });
+    // ================= THE FUNCTIONS ===================
 
     function textChange(textPlaceHolder, path) {
         $("p").text(eval(textPlaceHolder + "_" + path + magicNum));
         // console.log(textPlaceHolder + "_" + path + magicNum);
     }
 
+    //function textillate() {
+    // $('p').textillate({ in: { effect: 'rollIn' } });
+    //}
+    //textillate();
+
     function char1Change(theImage) {
         $("#char1").attr('src', theImage);
+    }
+
+    function char2Change(theImage) {
+        $("#char2").attr('src', theImage);
     }
 
     function nameChange(theName, theColor) {

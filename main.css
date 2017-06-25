@@ -72,18 +72,40 @@ button:hover {
     height: 100%;
 }
 
+.button-space {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45%;
+}
+
+.button-space>button {
+    border: 2px solid #333;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: none;
+}
+
+.button-space>button:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#button1 {
+    margin-bottom: 10px;
+}
+
 .char1 {
     height: 400px;
     width: 300px;
-    /*This is a box in which I'll put images with transparent BG!*/
-    background-color: purple;
+    /*This is a box in which I'll put images with transparent BG!
+    background-color: purple;*/
 }
 
 .char2 {
     height: 400px;
     width: 300px;
-    /*This is a box in which I'll put images with transparent BG!*/
-    background-color: teal;
+    /*This is a box in which I'll put images with transparent BG!
+    background-color: teal;*/
 }
 
 h3 {

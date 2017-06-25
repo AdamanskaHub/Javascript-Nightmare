@@ -1,9 +1,10 @@
-var text_2 = "Go forth my minion and bring back that unworthy soul";
+var text_1 = "Bzzzz";
+var text_2 = "Go forth my minion and bring back that unworthy soul.";
 var text_3 = "Bzzzz zz z bzz bz zzzz ? Bzzzzz zzz bzz'z!";
-var text_4 = "Oh...What happened? Where am I?";
-var text_5 = "It's IronHeck";
+var text_4 = "Oh...What happened? What time is it? Where am I?";
+var text_5 = "It's IronHeck...";
 var text_6 = "Hohohoho... It is *not* IronHeck";
-var text_7 = "It is JAVASCRIPT HELL";
+var text_7 = "It is JAVASCRIPT HELL!";
 var text_8 = "What do you mean? Javascript Hell?";
 var text_9 = "I am the Javascript Lord. I have been observing you.";
 var text_10 = "Creepy...";
