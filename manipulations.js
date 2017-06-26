@@ -1,11 +1,17 @@
 // ============================================
 // =========== DOC READY !!!!!! ===============
 // ============================================
+function move(num) {
+    magicNum = num;
+    return magicNum;
+}
+
 
 $(document).ready(function() {
 
     var magicNum = 0;
-    var musicScore = 0;
+
+
 
     var path_a, path_b, path_1a, path_1b, path_1c,
         path_2a, path_2b, path_2c,
@@ -45,7 +51,7 @@ $(document).ready(function() {
                 bgChange(BG.hell);
                 $("#char2").fadeOut();
                 $(".main").effect("shake");
-                emi;
+                nameChange(Emilie.name, Emilie.color);
                 bgChange(BG.hell);
                 char1Change(Emilie.grumpy);
                 // char2Change("");
@@ -57,12 +63,12 @@ $(document).ready(function() {
                 break;
             case 6:
                 nameChange(JSMonster.name, JSMonster.color);
-                txt;
+                txt();
                 char2Change(JSMonster.neutral);
                 $("char2").fadeIn(2000);
                 break;
             case 7:
-                nameChange(JSMonster.name, JSMonster.color);
+                js;
                 txt;
                 $("p").css("font-size", "3em");
                 break;
@@ -75,7 +81,7 @@ $(document).ready(function() {
                 txt;
                 break;
             case 11:
-                nameChange(JSMonster.name, JSMonster.color);
+                js;
                 txt;
                 break;
             case 14:
@@ -174,7 +180,7 @@ $(document).ready(function() {
                 $(".char2").fadeOut();
                 break;
             case 33:
-                char1Change(Ajax.neutral);
+                char2Change(Ajax.neutral);
                 $(".char2").fadeIn();
                 nameChange(Ajax.name, Ajax.color);
                 txt;
@@ -339,7 +345,7 @@ $(document).ready(function() {
                 txt;
                 break;
             case 66:
-                cl;
+                nameChange(Closure.name, Closure.color);
                 txt;
                 break;
             case 68:
@@ -367,6 +373,7 @@ $(document).ready(function() {
                     { song_3 = true; }
                     deleteAllThat("#button4");
                     $("#next").show();
+                    console.log("song_3 = " + song_3);
                 });
                 $('#button4').on('click', function() {
                     djPlayThatSong(sounds.pop, 10000);
@@ -374,12 +381,12 @@ $(document).ready(function() {
                 break;
             case 70:
                 nameChange(Closure.name, Closure.color);
-                if (path_2a) {
+                if (song_1) {
                     textChange("text", "a");
                     musicScore++;
-                } else if (path_2b) {
+                } else if (song_2) {
                     textChange("text", "b");
-                } else if (path_2c) {
+                } else if (song_3) {
                     textChange("text", "c");
                 }
                 break;
@@ -418,11 +425,11 @@ $(document).ready(function() {
                 break;
             case 73:
                 nameChange(Closure.name, Closure.color);
-                if (path_2a) {
+                if (song_1) {
                     textChange("text", "a");
-                } else if (path_2b) {
+                } else if (song_2) {
                     textChange("text", "b");
-                } else if (path_2c) {
+                } else if (song_3) {
                     textChange("text", "c");
                     musicScore++;
                 }
@@ -464,11 +471,11 @@ $(document).ready(function() {
                 break;
             case 76:
                 nameChange(Closure.name, Closure.color);
-                if (path_2a) {
+                if (song_1) {
                     textChange("text", "a");
-                } else if (path_2b) {
+                } else if (song_2) {
                     textChange("text", "b");
-                } else if (path_2c) {
+                } else if (song_3) {
                     textChange("text", "c");
                     musicScore++;
                 }
@@ -516,12 +523,12 @@ $(document).ready(function() {
                 break;
             case 80:
                 nameChange(Closure.name, Closure.color);
-                if (path_2a) {
+                if (song_1) {
                     textChange("text", "a");
-                } else if (path_2b) {
+                } else if (song_2) {
                     musicScore++;
                     textChange("text", "b");
-                } else if (path_2c) {
+                } else if (song_3) {
                     textChange("text", "c");
                 }
                 break;
@@ -535,11 +542,35 @@ $(document).ready(function() {
                 break;
             case 82:
                 nameChange(Closure.name, Closure.color);
-                txt;
+                txt();
                 break;
 
-
-
+            case 83:
+                nameChange(Closure.name, Closure.color);
+                if (musicScore <= 2) {
+                    textChange("text", "a");
+                } else if (musicScore === 3) {
+                    textChange("text", "b");
+                } else if (musicScore === 4) {
+                    textChange("text", "c");
+                }
+                break;
+            case 84:
+                nameChange(Emilie.name, Emilie.color);
+                txt;
+                break;
+            case 85:
+                nameChange(Closure.name, Closure.color);
+                txt;
+                break;
+            case 86:
+                nameChange(Closure.name, Closure.color);
+                txt;
+                break;
+            case 87:
+                nameChange(Emilie.name, Emilie.color);
+                txt;
+                break;
 
 
 
@@ -583,7 +614,7 @@ $(document).ready(function() {
 
     function char2Change(theImage) {
         $("#char2").attr('src', theImage);
-        $("#char2").css("display", "block")
+        $("#char2").css("display", "block");
     }
 
     function nameChange(theName, theColor) {
@@ -622,6 +653,17 @@ $(document).ready(function() {
         $(".button-space").append(b3);
     }
 
+    // function addFourButtons(value1, value2, value3, value4) {
+    //     var b1 = $("<button id='button1'>" + value1 + "</button>");
+    //     $(".button-space").append(b1);
+    //     var b2 = $("<button id='button2'>" + value2 + "</button>");
+    //     $(".button-space").append(b2);
+    //     var b3 = $("<button id='button3'>" + value3 + "</button>");
+    //     $(".button-space").append(b3);
+    //     var b4 = $("<button id='button4'>" + value4 + "</button>");
+    //     $(".text-content").append(b4);
+    // }
+
     function songChoice(v1, v2, v3, v4) {
         var b1 = $("<button id='button1'>" + v1 + "</button>");
         $(".button-space").append(b1);
@@ -631,7 +673,7 @@ $(document).ready(function() {
         $(".button-space").append(b3);
 
         var b4 = $("<button id='button4'>" + v4 + "</button>");
-        $(".text-content").append(b3);
+        $(".text-content").append(b4);
     }
 
     function deleteButtons() {

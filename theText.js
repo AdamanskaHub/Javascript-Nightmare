@@ -1,3 +1,5 @@
+var musicScore = 0;
+
 // ============================================
 // ============== CHARACTERS ==================
 // ============================================
@@ -187,3 +189,12 @@ var text_c80 = "YAASS QUEEN ! I didn't like the movie though.";
 // ========== CHOICE ======== //
 var text_81 = "Wow, that was cool.";
 var text_82 = "You guessed " + musicScore + " songs out of 4.";
+// ========== CHOICE ========
+var text_a83 = "That's pathetic. I don't know what you're doing with your life but you should listen to more music.";
+var text_b83 = "That's acceptable.";
+var text_c83 = "You did well.";
+// ========== CHOICE ======== //
+var text_84 = "So... What's up? Have I passed the trial?";
+var text_85 = "Oh that... Sure. I had a lot of fun. Good luck with the rest.";
+var text_86 = "Tada!";
+var text_87 = "Well that was easy.";
