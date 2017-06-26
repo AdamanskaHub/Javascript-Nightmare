@@ -7,7 +7,8 @@ $(document).ready(function() {
     var magicNum = 0;
 
     var path_a, path_b, path_1a, path_1b, path_1c,
-        path_2a, path_2b, path_2c = false;
+        path_2a, path_2b, path_2c,
+        path_3a, path_3b, song_1, song_2, song_3 = false;
 
     $('button').on('click', function() {
 
@@ -59,8 +60,11 @@ $(document).ready(function() {
                 txt;
                 $("p").css("font-size", "3em");
                 break;
-            case 9:
+            case 8:
                 $("p").css("font-size", "1.25em");
+                txt;
+                break;
+            case 9:
                 nameChange(JSMonster.name, JSMonster.color);
                 txt;
                 break;
@@ -135,11 +139,13 @@ $(document).ready(function() {
                 break;
             case 26:
                 $("p").css("font-size", "2em");
+                nameChange(JSMonster.name, JSMonster.color);
                 js;
                 txt;
                 break;
             case 27:
                 $("p").css("font-size", "3em");
+                nameChange(JSMonster.name, JSMonster.color);
                 js;
                 txt;
                 break;
@@ -159,9 +165,11 @@ $(document).ready(function() {
             case 32:
                 nameChange(JSMonster.name, JSMonster.color);
                 txt;
+                $(.char2).fadeOut();
                 break;
             case 33:
-
+                char1Change(Ajax.neutral);
+                $(.char2).fadeIn();
                 nameChange(Ajax.name, Ajax.color);
                 txt;
                 break;
@@ -307,6 +315,12 @@ $(document).ready(function() {
                 }
                 break;
             case 61:
+                char2Change(Closure.neutral);
+                if (path_3a) {
+                    $('.char2').animate({ marginRight: "0px" }, 1500);
+                } else if {
+                    $('.char2').fadeIn("slow");
+                }
                 nameChange(Closure.name, Closure.color);
                 txt;
                 break;
@@ -325,6 +339,44 @@ $(document).ready(function() {
             case 68:
                 nameChange(Closure.name, Closure.color);
                 txt;
+                break;
+            case 69:
+                nameChange(Ajax.name, Ajax.color);
+                txt;
+                songChoice("Pop - N'sync", "Britney Spears - Slave 4 u",
+                    "BackstreetBoys - Everybody", "'I need to listen to it again'");
+                $("#next").hide();
+                $('#button1').on('click', function() {
+                    { song_1 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button2').on('click', function() {
+                    { song_2 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button3').on('click', function() {
+                    { song_3 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button4').on('click', function() {
+                    { path_2c = true; }
+                    deleteThreeButtons();
+                    $("#next").show();
+                });
+                break;
+
+            case 50:
+                nameChange(Ajax.name, Ajax.color);
+                if (path_2a) {
+                    textChange("text", "a");
+                } else if (path_2b) {
+                    textChange("text", "b");
+                } else if (path_2c) {
+                    textChange("text", "c");
+                }
                 break;
 
 
@@ -398,6 +450,18 @@ $(document).ready(function() {
         $(".button-space").append(b3);
     }
 
+    function songChoice(v1, v2, v3, v4) {
+        var b1 = $("<button id='button1'>" + v1 + "</button>");
+        $(".button-space").append(b1);
+        var b2 = $("<button id='button2'>" + v2 + "</button>");
+        $(".button-space").append(b2);
+        var b3 = $("<button id='button3'>" + v3 + "</button>");
+        $(".button-space").append(b3);
+
+        var b4 = $("<button id='button4'>" + v4 + "</button>");
+        $(".text-content").append(b3);
+    }
+
     function deleteButtons() {
         $("#button1").remove();
         $("#button2").remove();
@@ -407,6 +471,15 @@ $(document).ready(function() {
         $("#button1").remove();
         $("#button2").remove();
         $("#button3").remove();
+    }
+
+    function deleteSomeButtons(value) {
+        $(value).remove();
+    }
+
+    function deleteAllThat(value) {
+        deleteThreeButtons();
+        deleteSomeButtons(value);
     }
 
     function nextOff() {

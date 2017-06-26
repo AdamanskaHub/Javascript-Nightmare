@@ -153,3 +153,4 @@ var text_65 = "I am glad to see you so eager...";
 var text_66 = "...To play THE MUSIC QUIZ !";
 var text_67 = "A music quiz ? Now that's cool.";
 var text_68 = "Let us start the challenge.";
+var text_69 = "Guess the song!";
