@@ -60,7 +60,10 @@ var sounds = {
     round2: "",
     round3: "",
     final: "",
-    pop: "music/NSYNC-Pop.mp3"
+    pop: "music/NSYNC-Pop.mp3",
+    scandalous: "music/Mis-Teeq-Scandalous.mp3",
+    queen: "music/Queen-Of-The-Night.mp3",
+    vogue: "music/Madonna-Vogue.mp3"
 };
 
 // ============================================
@@ -160,3 +163,27 @@ var text_a70 = "EXACTLY ! I love this song. It doesn't matter Bout the car I dri
 var text_b70 = "Are you kidding me...?";
 var text_c70 = "Know your boys bands. Please.";
 // ========== CHOICE ======== //
+var text_71 = "Next one!";
+var text_72 = "It's a good one!";
+// ========== CHOICE ========
+var text_a73 = "'And how you gonna act How you gonna handle that' cool song, but wrong.";
+var text_b73 = "You chose randomly?...";
+var text_c73 = "So so so scandalous! Alright!";
+// ========== CHOICE ======== //
+var text_74 = "Last one, get ready.";
+var text_75 = "An easy one.";
+// ========== CHOICE ========
+var text_a76 = "Sadly not and how can you be so wrong?!";
+var text_b76 = "You chose randomly?...";
+var text_c76 = "YAASS QUEEN ! I didn't like the movie though.";
+// ========== CHOICE ======== //
+var text_77 = "I'm having so much fun. Let's do another one.";
+var text_78 = "Errrr...Sure but...";
+var text_79 = "Let's roll!";
+// ========== CHOICE ========
+var text_a80 = "Sadly not and how can you be so wrong?!";
+var text_b80 = "You chose randomly?...";
+var text_c80 = "YAASS QUEEN ! I didn't like the movie though.";
+// ========== CHOICE ======== //
+var text_81 = "Wow, that was cool.";
+var text_82 = "You guessed " + musicScore + " songs out of 4.";

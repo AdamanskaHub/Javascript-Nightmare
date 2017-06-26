@@ -347,7 +347,6 @@ $(document).ready(function() {
                 txt;
                 break;
             case 69:
-
                 djPlayThatSong(sounds.pop, 10000);
                 nameChange(Closure.name, Closure.color);
                 txt;
@@ -373,7 +372,6 @@ $(document).ready(function() {
                     djPlayThatSong(sounds.pop, 10000);
                 });
                 break;
-
             case 70:
                 nameChange(Closure.name, Closure.color);
                 if (path_2a) {
@@ -385,6 +383,164 @@ $(document).ready(function() {
                     textChange("text", "c");
                 }
                 break;
+            case 71:
+                song_1 = false;
+                song_2 = false;
+                song_3 = false;
+                nameChange(Closure.name, Closure.color);
+                txt;
+                break;
+            case 72:
+                djPlayThatSong(sounds.scandalous, 10000);
+                nameChange(Closure.name, Closure.color);
+                txt;
+                songChoice("Mya - Case of the ex", "Ciara - Like a boy",
+                    "Miss Teeq - Scandalous", "'One more time'");
+                $("#next").hide();
+                $('#button1').on('click', function() {
+                    { song_1 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button2').on('click', function() {
+                    { song_2 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button3').on('click', function() {
+                    { song_3 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button4').on('click', function() {
+                    djPlayThatSong(sounds.scandalous, 10000);
+                });
+                break;
+            case 73:
+                nameChange(Closure.name, Closure.color);
+                if (path_2a) {
+                    textChange("text", "a");
+                } else if (path_2b) {
+                    textChange("text", "b");
+                } else if (path_2c) {
+                    textChange("text", "c");
+                    musicScore++;
+                }
+                break;
+            case 74:
+                song_1 = false;
+                song_2 = false;
+                song_3 = false;
+                nameChange(Closure.name, Closure.color);
+                txt;
+                break;
+            case 75:
+                djPlayThatSong(sounds.queen, 10000);
+                nameChange(Closure.name, Closure.color);
+                txt;
+                songChoice("Destiny's Child - Independant woman",
+                    "Tony Braxton - He wasn't man enough",
+                    "Whitney Houston - Queen of the night",
+                    "'Again please'");
+                $("#next").hide();
+                $('#button1').on('click', function() {
+                    { song_1 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button2').on('click', function() {
+                    { song_2 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button3').on('click', function() {
+                    { song_3 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button4').on('click', function() {
+                    djPlayThatSong(sounds.queen, 10000);
+                });
+                break;
+            case 76:
+                nameChange(Closure.name, Closure.color);
+                if (path_2a) {
+                    textChange("text", "a");
+                } else if (path_2b) {
+                    textChange("text", "b");
+                } else if (path_2c) {
+                    textChange("text", "c");
+                    musicScore++;
+                }
+                break;
+
+            case 77:
+                song_1 = false;
+                song_2 = false;
+                song_3 = false;
+                nameChange(Closure.name, Closure.color);
+                txt;
+                break;
+            case 78:
+                nameChange(Emilie.name, Emilie.color);
+                txt;
+                break;
+
+            case 79:
+                djPlayThatSong(sounds.vogue, 20000);
+                nameChange(Closure.name, Closure.color);
+                txt;
+                songChoice("Natalie Imbruglia - Torn",
+                    "Madonna - Vogue",
+                    "Freeland - Borderline",
+                    "'Again please'");
+                $("#next").hide();
+                $('#button1').on('click', function() {
+                    { song_1 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button2').on('click', function() {
+                    { song_2 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button3').on('click', function() {
+                    { song_3 = true; }
+                    deleteAllThat("#button4");
+                    $("#next").show();
+                });
+                $('#button4').on('click', function() {
+                    djPlayThatSong(sounds.vogue, 20000);
+                });
+                break;
+            case 80:
+                nameChange(Closure.name, Closure.color);
+                if (path_2a) {
+                    textChange("text", "a");
+                } else if (path_2b) {
+                    musicScore++;
+                    textChange("text", "b");
+                } else if (path_2c) {
+                    textChange("text", "c");
+                }
+                break;
+
+            case 81:
+                nameChange(Closure.name, Closure.color);
+                txt;
+                song_1 = false;
+                song_2 = false;
+                song_3 = false;
+                break;
+            case 82:
+                nameChange(Closure.name, Closure.color);
+                txt;
+                break;
+
+
+
+
 
 
 
@@ -400,7 +556,16 @@ $(document).ready(function() {
 
     }); // click button next end
 
+
+
+
+
+
+
+
+    // ===================================================
     // ================= THE FUNCTIONS ===================
+    // ===================================================
 
     function textChange(textPlaceHolder, path) {
         $("p").text(eval(textPlaceHolder + "_" + path + magicNum));
@@ -502,8 +667,8 @@ $(document).ready(function() {
         audio.src = song;
         audio.play();
         setTimeout(function() {
-            audio.pause(); // Stop playing
-            audio.currentTime = 0; // very inaccurate
+            audio.pause();
+            audio.currentTime = 0;
         }, time);
     }
 
