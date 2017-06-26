@@ -56,10 +56,11 @@ var BG = {
 var sounds = {
     sleep: "music/bg-room.png",
     hell: "music/bg-hell.png",
-    round1: "",
+    round1: "music/Guile.mp3",
     round2: "",
     round3: "",
-    final: ""
+    final: "",
+    pop: "music/NSYNC-Pop.mp3"
 };
 
 // ============================================
@@ -154,3 +155,8 @@ var text_66 = "...To play THE MUSIC QUIZ !";
 var text_67 = "A music quiz ? Now that's cool.";
 var text_68 = "Let us start the challenge.";
 var text_69 = "Guess the song!";
+// ========== CHOICE ========
+var text_a70 = "EXACTLY ! I love this song. It doesn't matter Bout the car I drive or What I wear around my neck";
+var text_b70 = "Are you kidding me...?";
+var text_c70 = "Know your boys bands. Please.";
+// ========== CHOICE ======== //

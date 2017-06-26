@@ -5,10 +5,13 @@
 $(document).ready(function() {
 
     var magicNum = 0;
+    var musicScore = 0;
 
     var path_a, path_b, path_1a, path_1b, path_1c,
         path_2a, path_2b, path_2c,
         path_3a, path_3b, song_1, song_2, song_3 = false;
+
+    var x = sounds.round1;
 
     $('button').on('click', function() {
 
@@ -23,6 +26,9 @@ $(document).ready(function() {
 
         switch (magicNum) {
             case 1:
+                // ==================
+                // djPlayThatSong(sounds.round1, 10000)
+                // ==================
                 nameChange("Mosquito", '#fff');
                 char2Change("img/mosquito.png");
                 break;
@@ -165,11 +171,11 @@ $(document).ready(function() {
             case 32:
                 nameChange(JSMonster.name, JSMonster.color);
                 txt;
-                $(.char2).fadeOut();
+                $(".char2").fadeOut();
                 break;
             case 33:
                 char1Change(Ajax.neutral);
-                $(.char2).fadeIn();
+                $(".char2").fadeIn();
                 nameChange(Ajax.name, Ajax.color);
                 txt;
                 break;
@@ -317,9 +323,9 @@ $(document).ready(function() {
             case 61:
                 char2Change(Closure.neutral);
                 if (path_3a) {
-                    $('.char2').animate({ marginRight: "0px" }, 1500);
-                } else if {
-                    $('.char2').fadeIn("slow");
+                    $(".char2").animate({ marginRight: "0px" }, 1500);
+                } else if (path_3b) {
+                    $(".char2").fadeIn("slow");
                 }
                 nameChange(Closure.name, Closure.color);
                 txt;
@@ -341,7 +347,9 @@ $(document).ready(function() {
                 txt;
                 break;
             case 69:
-                nameChange(Ajax.name, Ajax.color);
+
+                djPlayThatSong(sounds.pop, 10000);
+                nameChange(Closure.name, Closure.color);
                 txt;
                 songChoice("Pop - N'sync", "Britney Spears - Slave 4 u",
                     "BackstreetBoys - Everybody", "'I need to listen to it again'");
@@ -362,16 +370,15 @@ $(document).ready(function() {
                     $("#next").show();
                 });
                 $('#button4').on('click', function() {
-                    { path_2c = true; }
-                    deleteThreeButtons();
-                    $("#next").show();
+                    djPlayThatSong(sounds.pop, 10000);
                 });
                 break;
 
-            case 50:
-                nameChange(Ajax.name, Ajax.color);
+            case 70:
+                nameChange(Closure.name, Closure.color);
                 if (path_2a) {
                     textChange("text", "a");
+                    musicScore++;
                 } else if (path_2b) {
                     textChange("text", "b");
                 } else if (path_2c) {
@@ -386,7 +393,7 @@ $(document).ready(function() {
 
 
             default:
-                emi;
+                nameChange(Emilie.name, Emilie.color);
                 textChange("text", "");
                 break;
         }
@@ -486,5 +493,18 @@ $(document).ready(function() {
         $("#next").css('pointer-events', 'none');
     }
 
+    function music(soundFile) {
+        soundFile.play();
+    }
+
+    function djPlayThatSong(song, time) {
+        var audio = document.createElement('audio');
+        audio.src = song;
+        audio.play();
+        setTimeout(function() {
+            audio.pause(); // Stop playing
+            audio.currentTime = 0; // very inaccurate
+        }, time);
+    }
 
 }); // end of doc ready
