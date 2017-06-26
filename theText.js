@@ -161,6 +161,7 @@ var text_67 = "A music quiz ? Now that's cool.";
 var text_68 = "Let us start the challenge.";
 var text_69 = "Guess the song!";
 // ========== CHOICE ========
+var text_70 = "WRONG";
 var text_a70 = "EXACTLY ! I love this song. It doesn't matter Bout the car I drive or What I wear around my neck";
 var text_b70 = "Are you kidding me...?";
 var text_c70 = "Know your boys bands. Please.";
@@ -168,6 +169,7 @@ var text_c70 = "Know your boys bands. Please.";
 var text_71 = "Next one!";
 var text_72 = "It's a good one!";
 // ========== CHOICE ========
+var text_73 = "WRONG.";
 var text_a73 = "'And how you gonna act How you gonna handle that' cool song, but wrong.";
 var text_b73 = "You chose randomly?...";
 var text_c73 = "So so so scandalous! Alright!";
@@ -175,6 +177,7 @@ var text_c73 = "So so so scandalous! Alright!";
 var text_74 = "Last one, get ready.";
 var text_75 = "An easy one.";
 // ========== CHOICE ========
+var text_76 = "WRONG";
 var text_a76 = "Sadly not and how can you be so wrong?!";
 var text_b76 = "You chose randomly?...";
 var text_c76 = "YAASS QUEEN ! I didn't like the movie though.";
@@ -183,6 +186,7 @@ var text_77 = "I'm having so much fun. Let's do another one.";
 var text_78 = "Errrr...Sure but...";
 var text_79 = "Let's roll!";
 // ========== CHOICE ========
+var text_80 = "WRONG";
 var text_a80 = "Sadly not and how can you be so wrong?!";
 var text_b80 = "You chose randomly?...";
 var text_c80 = "YAASS QUEEN ! I didn't like the movie though.";
@@ -190,6 +194,7 @@ var text_c80 = "YAASS QUEEN ! I didn't like the movie though.";
 var text_81 = "Wow, that was cool.";
 var text_82 = "You guessed " + musicScore + " songs out of 4.";
 // ========== CHOICE ========
+var text_83 = "WRONG";
 var text_a83 = "That's pathetic. I don't know what you're doing with your life but you should listen to more music.";
 var text_b83 = "That's acceptable.";
 var text_c83 = "You did well.";
