@@ -100,29 +100,30 @@ function changeScene(sceneNumber) {
             nameChange(JSMonster.name, JSMonster.color);
             addButtons("About to tell me how I get out", "Disgrace, hell, stuff like that");
             $("#next").hide();
-            $('#button1').on('click', function() {
-                { path_a = true; }
-                console.log("a = " + path_a);
-                // currentScene++;
-                console.log(currentScene);
-                deleteButtons(button1, button2);
-                $("#next").show();
-            });
-            $('#button2').on('click', function() {
-                { path_b = true; }
-                deleteButtons(button2, button1);
-                $("#next").show();
-            });
+            setSceneListeners();
+            // $('#button1').on('click', function() {
+            //     { path_a = true; }
+            //     console.log("a = " + path_a);
+            //     // currentScene++;
+            //     console.log(currentScene);
+            //     deleteButtons(button1, button2);
+            //     $("#next").show();
+            // });
+            // $('#button2').on('click', function() {
+            //     { path_b = true; }
+            //     deleteButtons(button2, button1);
+            //     $("#next").show();
+            // });
             // I'm not clicking next and can't increase my count!
             break;
 
         case 17:
             nameChange(JSMonster.name, JSMonster.color);
-            if (path_a) {
-                textChange("a");
-            } else if (path_b) {
-                textChange("b");
-            }
+            // if (path_a) {
+            //     textChange("a");
+            // } else if (path_b) {
+            //     textChange("b");
+            // }
             break;
 
         case 18:
@@ -156,7 +157,7 @@ function changeScene(sceneNumber) {
         case 27:
             nameChange(JSMonster.name, JSMonster.color);
             textChange(undefined, 3);
-            $(".char2").effect("bounce", { times: 16, distance: 10 }, 2000);
+            $(".char2").effect("bounce", { times: 28, distance: 10 }, 4000);
             break;
         case 28:
             nameChange(Emilie.name, Emilie.color);
@@ -166,8 +167,7 @@ function changeScene(sceneNumber) {
         case 29:
             nameChange(JSMonster.name, JSMonster.color);
             textChange(undefined, 2);
-            $(".char2").effect("bounce", { times: 8, distance: 10 }, 1000);
-            break;
+            $(".char2").effect("bounce", { times: 12, distance: 10 }, 2000);
             break;
         case 30:
             nameChange(Emilie.name, Emilie.color);
@@ -205,32 +205,33 @@ function changeScene(sceneNumber) {
             textChange();
             addButtons("Rock", "Paper", "Scissors");
             $("#next").hide();
-            $('#button1').on('click', function() {
-                { path_1a = true; }
-                deleteButtons(button1, button2, button3);
-                $("#next").show();
-            });
-            $('#button2').on('click', function() {
-                { path_1b = true; }
-                deleteButtons(button1, button2, button3);
-                $("#next").show();
-            });
-            $('#button3').on('click', function() {
-                { path_1c = true; }
-                deleteButtons(button1, button2, button3);
-                $("#next").show();
-            });
+            setSceneListeners();
+            // $('#button1').on('click', function() {
+            //     { path_1a = true; }
+            //     deleteButtons(button1, button2, button3);
+            //     $("#next").show();
+            // });
+            // $('#button2').on('click', function() {
+            //     { path_1b = true; }
+            //     deleteButtons(button1, button2, button3);
+            //     $("#next").show();
+            // });
+            // $('#button3').on('click', function() {
+            //     { path_1c = true; }
+            //     deleteButtons(button1, button2, button3);
+            //     $("#next").show();
+            // });
             break;
 
         case 45:
             nameChange(Ajax.name, Ajax.color);
-            if (path_1a) {
-                textChange("a");
-            } else if (path_1b) {
-                textChange("b");
-            } else if (path_1c) {
-                textChange("c");
-            }
+            // if (path_1a) {
+            //     textChange("a");
+            // } else if (path_1b) {
+            //     textChange("b");
+            // } else if (path_1c) {
+            //     textChange("c");
+            // }
             break;
         case 46:
             nameChange(Ajax.name, Ajax.color);
@@ -246,32 +247,33 @@ function changeScene(sceneNumber) {
             addButtons("Smash some scissors", "Wrap some rocks",
                 "Cut some paper");
             $("#next").hide();
-            $('#button1').on('click', function() {
-                { path_2a = true; }
-                deleteButtons(button1, button2, button3);
-                $("#next").show();
-            });
-            $('#button2').on('click', function() {
-                { path_2b = true; }
-                deleteButtons(button1, button2, button3);
-                $("#next").show();
-            });
-            $('#button3').on('click', function() {
-                { path_2c = true; }
-                deleteButtons(button1, button2, button3);
-                $("#next").show();
-            });
+            setSceneListeners();
+            // $('#button1').on('click', function() {
+            //     { path_2a = true; }
+            //     deleteButtons(button1, button2, button3);
+            //     $("#next").show();
+            // });
+            // $('#button2').on('click', function() {
+            //     { path_2b = true; }
+            //     deleteButtons(button1, button2, button3);
+            //     $("#next").show();
+            // });
+            // $('#button3').on('click', function() {
+            //     { path_2c = true; }
+            //     deleteButtons(button1, button2, button3);
+            //     $("#next").show();
+            // });
             break;
 
         case 50:
             nameChange(Ajax.name, Ajax.color);
-            if (path_2a) {
-                textChange("a");
-            } else if (path_2b) {
-                textChange("b");
-            } else if (path_2c) {
-                textChange("c");
-            }
+            // if (path_2a) {
+            //     textChange("a");
+            // } else if (path_2b) {
+            //     textChange("b");
+            // } else if (path_2c) {
+            //     textChange("c");
+            // }
             break;
         case 51:
             $(".char1").effect("shake");
@@ -355,43 +357,44 @@ function changeScene(sceneNumber) {
             songChoice("Pop - N'sync", "Britney Spears - Slave 4 u",
                 "BackstreetBoys - Everybody", "'I need to listen to it again'");
             $("#next").hide();
-            $('#button1').on('click', function() {
-                { song_1 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button2').on('click', function() {
-                { song_2 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button3').on('click', function() {
-                song_3x = true;
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-                console.log("song_3", song_3x, "magic", currentScene);
-            });
-            $('#button4').on('click', function() {
-                djPlayThatSong(sounds.pop, 10000);
-            });
+            setSceneListeners();
+            // $('#button1').on('click', function() {
+            //     { song_1 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button2').on('click', function() {
+            //     { song_2 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button3').on('click', function() {
+            //     song_3x = true;
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            //     console.log("song_3", song_3x, "magic", currentScene);
+            // });
+            // $('#button4').on('click', function() {
+            //     djPlayThatSong(sounds.pop, 10000);
+            // });
             break;
         case 70:
             nameChange(Closure.name, Closure.color);
             console.log(song_3x);
-            if (song_1) {
-                textChange("a");
-                musicScore++;
-            } else if (song_2) {
-                textChange("b");
-            } else if (song_3x) {
-                console.log("HERE");
-                textChange("c");
-            }
+            // if (song_1) {
+            //     textChange("a");
+            //     musicScore++;
+            // } else if (song_2) {
+            //     textChange("b");
+            // } else if (song_3x) {
+            //     console.log("HERE");
+            //     textChange("c");
+            // }
             break;
         case 71:
-            song_1 = false;
-            song_2 = false;
-            song_3 = false;
+            // song_1 = false;
+            // song_2 = false;
+            // song_3 = false;
             nameChange(Closure.name, Closure.color);
             textChange();
             break;
@@ -402,40 +405,41 @@ function changeScene(sceneNumber) {
             songChoice("Mya - Case of the ex", "Ciara - Like a boy",
                 "Miss Teeq - Scandalous", "'One more time'");
             $("#next").hide();
-            $('#button1').on('click', function() {
-                { song_1 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button2').on('click', function() {
-                { song_2 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button3').on('click', function() {
-                { song_3 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button4').on('click', function() {
-                djPlayThatSong(sounds.scandalous, 10000);
-            });
+            setSceneListeners();
+            // $('#button1').on('click', function() {
+            //     { song_1 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button2').on('click', function() {
+            //     { song_2 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button3').on('click', function() {
+            //     { song_3 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button4').on('click', function() {
+            //     djPlayThatSong(sounds.scandalous, 10000);
+            // });
             break;
         case 73:
             nameChange(Closure.name, Closure.color);
-            if (song_1) {
-                textChange("a");
-            } else if (song_2) {
-                textChange("b");
-            } else if (song_3) {
-                textChange("c");
-                musicScore++;
-            }
+            // if (song_1) {
+            //     textChange("a");
+            // } else if (song_2) {
+            //     textChange("b");
+            // } else if (song_3) {
+            //     textChange("c");
+            //     musicScore++;
+            // }
             break;
         case 74:
-            song_1 = false;
-            song_2 = false;
-            song_3 = false;
+            // song_1 = false;
+            // song_2 = false;
+            // song_3 = false;
             nameChange(Closure.name, Closure.color);
             textChange();
             break;
@@ -448,41 +452,42 @@ function changeScene(sceneNumber) {
                 "Whitney Houston - Queen of the night",
                 "'Again please'");
             $("#next").hide();
-            $('#button1').on('click', function() {
-                { song_1 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button2').on('click', function() {
-                { song_2 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button3').on('click', function() {
-                { song_3 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button4').on('click', function() {
-                djPlayThatSong(sounds.queen, 10000);
-            });
+            setSceneListeners();
+            // $('#button1').on('click', function() {
+            //     { song_1 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button2').on('click', function() {
+            //     { song_2 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button3').on('click', function() {
+            //     { song_3 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button4').on('click', function() {
+            //     djPlayThatSong(sounds.queen, 10000);
+            // });
             break;
         case 76:
             nameChange(Closure.name, Closure.color);
-            if (song_1) {
-                textChange("a");
-            } else if (song_2) {
-                textChange("b");
-            } else if (song_3) {
-                textChange("c");
-                musicScore++;
-            }
+            // if (song_1) {
+            //     textChange("a");
+            // } else if (song_2) {
+            //     textChange("b");
+            // } else if (song_3) {
+            //     textChange("c");
+            //     musicScore++;
+            // }
             break;
 
         case 77:
-            song_1 = false;
-            song_2 = false;
-            song_3 = false;
+            // song_1 = false;
+            // song_2 = false;
+            // song_3 = false;
             nameChange(Closure.name, Closure.color);
             textChange();
             break;
@@ -500,42 +505,43 @@ function changeScene(sceneNumber) {
                 "Freeland - Borderline",
                 "'Again please'");
             $("#next").hide();
-            $('#button1').on('click', function() {
-                { song_1 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button2').on('click', function() {
-                { song_2 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button3').on('click', function() {
-                { song_3 = true; }
-                deleteButtons(button1, button2, button3, button4);
-                $("#next").show();
-            });
-            $('#button4').on('click', function() {
-                djPlayThatSong(sounds.vogue, 20000);
-            });
+            setSceneListeners();
+            // $('#button1').on('click', function() {
+            //     { song_1 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button2').on('click', function() {
+            //     { song_2 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button3').on('click', function() {
+            //     { song_3 = true; }
+            //     deleteButtons(button1, button2, button3, button4);
+            //     $("#next").show();
+            // });
+            // $('#button4').on('click', function() {
+            //     djPlayThatSong(sounds.vogue, 20000);
+            // });
             break;
         case 80:
             nameChange(Closure.name, Closure.color);
-            if (song_1) {
-                textChange("a");
-            } else if (song_2) {
-                musicScore++;
-                textChange("b");
-            } else if (song_3) {
-                textChange("c");
-            }
+            // if (song_1) {
+            //     textChange("a");
+            // } else if (song_2) {
+            //     musicScore++;
+            //     textChange("b");
+            // } else if (song_3) {
+            //     textChange("c");
+            // }
             break;
         case 81:
             nameChange(Closure.name, Closure.color);
             textChange();
-            song_1 = false;
-            song_2 = false;
-            song_3 = false;
+            // song_1 = false;
+            // song_2 = false;
+            // song_3 = false;
             break;
         case 82:
             nameChange(Closure.name, Closure.color);
@@ -543,7 +549,6 @@ function changeScene(sceneNumber) {
             break;
 
         case 83:
-            console.log("On est à 83");
             nameChange(Closure.name, Closure.color);
             if (musicScore <= 2) {
                 textChange("a");
