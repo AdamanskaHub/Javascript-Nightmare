@@ -1,10 +1,6 @@
 // ============================================
 // =========== DOC READY !!!!!! ===============
 // ============================================
-function move(num) {
-    magicNum = num;
-    return magicNum;
-}
 
 var magicNum = 0;
 
@@ -14,22 +10,14 @@ var path_a, path_b, path_1a, path_1b, path_1c,
 
 $(document).ready(function() {
 
-
-
-
-
-
     $('button').on('click', function() {
 
         magicNum++;
         console.log("Button clicked", magicNum);
 
-
-
         changeScene();
 
     }); // click button next end
-
 
 });
 
@@ -40,9 +28,7 @@ function changeScene() {
     var txt = textChange("text", "");
     var emi = nameChange(Emilie.name, Emilie.color);
 
-
     console.log("changing scene to ", magicNum);
-
 
     var x = sounds.round1;
     switch (magicNum) {
@@ -549,7 +535,6 @@ function changeScene() {
                 textChange("text", "c");
             }
             break;
-
         case 81:
             nameChange(Closure.name, Closure.color);
             txt;
@@ -606,8 +591,6 @@ function changeScene() {
     }
 
 }
-
-
 
 
 // ===================================================
@@ -669,17 +652,6 @@ function addThreeButtons2() {
     var b3 = $("<button id='button3'>Cut some paper</button>");
     $(".button-space").append(b3);
 }
-
-// function addFourButtons(value1, value2, value3, value4) {
-//     var b1 = $("<button id='button1'>" + value1 + "</button>");
-//     $(".button-space").append(b1);
-//     var b2 = $("<button id='button2'>" + value2 + "</button>");
-//     $(".button-space").append(b2);
-//     var b3 = $("<button id='button3'>" + value3 + "</button>");
-//     $(".button-space").append(b3);
-//     var b4 = $("<button id='button4'>" + value4 + "</button>");
-//     $(".text-content").append(b4);
-// }
 
 function songChoice(v1, v2, v3, v4) {
     var b1 = $("<button id='button1'>" + v1 + "</button>");
