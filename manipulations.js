@@ -2,7 +2,7 @@
 // =========== DOC READY !!!!!! ===============
 // ============================================
 
-var magicNum = 0;
+var currentScene = 0;
 
 var path_a, path_b, path_1a, path_1b, path_1c,
     path_2a, path_2b, path_2c,
@@ -10,43 +10,40 @@ var path_a, path_b, path_1a, path_1b, path_1c,
 
 $(document).ready(function() {
 
+
+
     $('button').on('click', function() {
 
-        magicNum++;
-        console.log("Button clicked", magicNum);
+        currentScene++;
+        // console.log("Button clicked", currentScene);
 
-        changeScene();
+        changeScene(currentScene);
 
     }); // click button next end
 
 });
 
-function changeScene() {
-    var js = nameChange(JSMonster.name, JSMonster.color);
-    var aj = nameChange(Ajax.name, Ajax.color);
-    var cl = nameChange(Closure.name, Closure.color);
-    var txt = textChange("text", "");
-    var emi = nameChange(Emilie.name, Emilie.color);
+function changeScene(sceneNumber) {
+    currentScene = sceneNumber;
+    console.log("changing scene to ", sceneNumber);
 
-    console.log("changing scene to ", magicNum);
-
-    var x = sounds.round1;
-    switch (magicNum) {
+    switch (sceneNumber) {
         case 1:
             // ==================
             // djPlayThatSong(sounds.round1, 10000)
             // ==================
+            textChange();
             nameChange("Mosquito", '#fff');
             char2Change("img/mosquito.png");
             break;
         case 2:
             bgChange(BG.room);
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
+            textChange();
             break;
         case 3:
             nameChange("Mosquito", '#fff');
-            txt;
+            textChange();
             break;
         case 4:
             bgChange(BG.hell);
@@ -55,66 +52,65 @@ function changeScene() {
             nameChange(Emilie.name, Emilie.color);
             bgChange(BG.hell);
             char1Change(Emilie.grumpy);
+            textChange();
             // char2Change("");
             break;
         case 5:
             bgChange(BG.hell);
             char1Change(Emilie.surprised);
-            emi;
+            nameChange(Emilie.name, Emilie.color);
+            textChange();
             break;
         case 6:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
-            char2Change(JSMonster.neutral);
+            textChange();
+            char2Change(JSMonster.smile);
             $("char2").fadeIn(2000);
             break;
         case 7:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
-            $("p").css("font-size", "3em");
+            textChange(undefined, 3);
             break;
         case 8:
-            $("p").css("font-size", "1.25em");
-            txt;
+            nameChange(Emilie.name, Emilie.color);
+            textChange();
             break;
         case 9:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
+            char2Change(JSMonster.neutral);
+            textChange();
             break;
         case 11:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
+            textChange();
             break;
         case 14:
             $("#char2").addClass("border");
-            txt;
+            textChange();
             break;
         case 15:
-            $("p").css("font-size", "2em");
+            char2Change(JSMonster.rage);
             $("#char2").removeClass("border");
-            txt;
+            textChange(undefined, 2);
             nameChange(JSMonster.name, JSMonster.color);
             break;
         case 16:
-            $("p").css("font-size", "1.25em");
-            txt;
+            textChange();
+            char2Change(JSMonster.neutral);
             nameChange(JSMonster.name, JSMonster.color);
-            addButtons(
-                "About to tell me how I get out",
-                "Disgrace, hell, stuff like that"
-            );
+            addButtons("About to tell me how I get out", "Disgrace, hell, stuff like that");
             $("#next").hide();
             $('#button1').on('click', function() {
                 { path_a = true; }
                 console.log("a = " + path_a);
-                // magicNum++;
-                console.log(magicNum);
-                deleteButtons();
+                // currentScene++;
+                console.log(currentScene);
+                deleteButtons(button1, button2);
                 $("#next").show();
             });
             $('#button2').on('click', function() {
                 { path_b = true; }
-                deleteButtons();
+                deleteButtons(button2, button1);
                 $("#next").show();
             });
             // I'm not clicking next and can't increase my count!
@@ -123,103 +119,105 @@ function changeScene() {
         case 17:
             nameChange(JSMonster.name, JSMonster.color);
             if (path_a) {
-                textChange("text", "a");
+                textChange("a");
             } else if (path_b) {
-                textChange("text", "b");
+                textChange("b");
             }
             break;
 
         case 18:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
+            textChange();
             break;
         case 20:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
+            char2Change(JSMonster.rage);
+            textChange();
             break;
         case 21:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
+            char2Change(JSMonster.smile);
+            textChange();
             break;
         case 23:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
+            char2Change(JSMonster.neutral);
+            textChange();
             break;
         case 25:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
-            $("p").css("font-size", "1.5em");
+            char2Change(JSMonster.smile);
+            textChange(undefined, 1.5);
             break;
         case 26:
-            $("p").css("font-size", "2em");
             nameChange(JSMonster.name, JSMonster.color);
-            js;
-            txt;
+            textChange(undefined, 2);
             break;
         case 27:
-            $("p").css("font-size", "3em");
             nameChange(JSMonster.name, JSMonster.color);
-            js;
-            txt;
+            textChange(undefined, 3);
+            $(".char2").effect("bounce", { times: 16, distance: 10 }, 2000);
             break;
         case 28:
-            $("p").css("font-size", "2em");
-            txt;
+            nameChange(Emilie.name, Emilie.color);
+
+            textChange(undefined, 2);
             break;
         case 29:
-            $("p").css("font-size", "2em");
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
+            textChange(undefined, 2);
+            $(".char2").effect("bounce", { times: 8, distance: 10 }, 1000);
+            break;
             break;
         case 30:
-            $("p").css("font-size", "1.25em");
-            txt;
+            nameChange(Emilie.name, Emilie.color);
+            textChange();
             break;
         case 32:
             nameChange(JSMonster.name, JSMonster.color);
-            txt;
+            textChange();
             $(".char2").fadeOut();
             break;
         case 33:
             char2Change(Ajax.neutral);
             $(".char2").fadeIn();
             nameChange(Ajax.name, Ajax.color);
-            txt;
+            textChange();
             break;
         case 35:
             nameChange(Ajax.name, Ajax.color);
-            txt;
+            textChange();
             break;
         case 37:
             nameChange(Ajax.name, Ajax.color);
-            txt;
+            textChange();
             break;
         case 39:
             nameChange(Ajax.name, Ajax.color);
-            txt;
+            textChange();
             break;
         case 42:
             nameChange(Ajax.name, Ajax.color);
-            txt;
+            textChange();
             break;
         case 44:
             nameChange(Ajax.name, Ajax.color);
-            txt;
-            addThreeButtons();
+            textChange();
+            addButtons("Rock", "Paper", "Scissors");
             $("#next").hide();
             $('#button1').on('click', function() {
                 { path_1a = true; }
-                deleteThreeButtons();
+                deleteButtons(button1, button2, button3);
                 $("#next").show();
             });
             $('#button2').on('click', function() {
                 { path_1b = true; }
-                deleteThreeButtons();
+                deleteButtons(button1, button2, button3);
                 $("#next").show();
             });
             $('#button3').on('click', function() {
                 { path_1c = true; }
-                deleteThreeButtons();
+                deleteButtons(button1, button2, button3);
                 $("#next").show();
             });
             break;
@@ -227,39 +225,40 @@ function changeScene() {
         case 45:
             nameChange(Ajax.name, Ajax.color);
             if (path_1a) {
-                textChange("text", "a");
+                textChange("a");
             } else if (path_1b) {
-                textChange("text", "b");
+                textChange("b");
             } else if (path_1c) {
-                textChange("text", "c");
+                textChange("c");
             }
             break;
         case 46:
             nameChange(Ajax.name, Ajax.color);
-            txt;
+            textChange();
             break;
         case 47:
-            aj;
-            txt;
+            nameChange(Ajax.name, Ajax.color);
+            textChange();
             break;
         case 49:
             nameChange(Ajax.name, Ajax.color);
-            txt;
-            addThreeButtons2();
+            textChange();
+            addButtons("Smash some scissors", "Wrap some rocks",
+                "Cut some paper");
             $("#next").hide();
             $('#button1').on('click', function() {
                 { path_2a = true; }
-                deleteThreeButtons();
+                deleteButtons(button1, button2, button3);
                 $("#next").show();
             });
             $('#button2').on('click', function() {
                 { path_2b = true; }
-                deleteThreeButtons();
+                deleteButtons(button1, button2, button3);
                 $("#next").show();
             });
             $('#button3').on('click', function() {
                 { path_2c = true; }
-                deleteThreeButtons();
+                deleteButtons(button1, button2, button3);
                 $("#next").show();
             });
             break;
@@ -267,53 +266,49 @@ function changeScene() {
         case 50:
             nameChange(Ajax.name, Ajax.color);
             if (path_2a) {
-                textChange("text", "a");
+                textChange("a");
             } else if (path_2b) {
-                textChange("text", "b");
+                textChange("b");
             } else if (path_2c) {
-                textChange("text", "c");
+                textChange("c");
             }
             break;
         case 51:
-            $("p").css("font-size", "2.5em");
             $(".char1").effect("shake");
-            txt;
+            textChange(undefined, 2.5);
             break;
         case 52:
-            $("p").css("font-size", "1.25em");
             nameChange(Ajax.name, Ajax.color);
-            txt;
+            textChange();
             break;
         case 54:
             nameChange(Ajax.name, Ajax.color);
-            txt;
+            textChange();
             break;
         case 55:
-            $("p").css("font-size", "2em");
-            txt;
+            textChange(undefined, 2);
             break;
         case 56:
-            $("p").css("font-size", "1.25em");
             nameChange(Ajax.name, Ajax.color);
-            txt;
+            textChange();
             break;
         case 57:
             nameChange(Voice.name, Voice.color);
-            txt;
+            textChange();
             break;
         case 58:
-            txt;
+            textChange();
             addButtons("Slide into oblivion!",
                 "Fade the hell out of him");
             $("#next").hide();
             $('#button1').on('click', function() {
                 { path_3a = true; }
-                deleteButtons();
+                deleteButtons(button1, button2);
                 $("#next").show();
             });
             $('#button2').on('click', function() {
                 { path_3b = true; }
-                deleteButtons();
+                deleteButtons(button1, button2);
                 $("#next").show();
             });
             break;
@@ -321,9 +316,9 @@ function changeScene() {
             nameChange(Ajax.name, Ajax.color);
             if (path_3a) {
                 $('.char2').animate({ marginRight: "-1000px" }, 1500);
-                textChange("text", "a");
+                textChange("a");
             } else if (path_3b) {
-                textChange("text", "b");
+                textChange("b");
                 $('.char2').fadeOut("slow");
             }
             break;
@@ -335,46 +330,46 @@ function changeScene() {
                 $(".char2").fadeIn("slow");
             }
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 62:
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 65:
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 66:
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 68:
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 69:
             djPlayThatSong(sounds.pop, 10000);
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             songChoice("Pop - N'sync", "Britney Spears - Slave 4 u",
                 "BackstreetBoys - Everybody", "'I need to listen to it again'");
             $("#next").hide();
             $('#button1').on('click', function() {
                 { song_1 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button2').on('click', function() {
                 { song_2 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button3').on('click', function() {
                 song_3x = true;
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
-                console.log("song_3", song_3x, "magic", magicNum);
+                console.log("song_3", song_3x, "magic", currentScene);
             });
             $('#button4').on('click', function() {
                 djPlayThatSong(sounds.pop, 10000);
@@ -384,13 +379,13 @@ function changeScene() {
             nameChange(Closure.name, Closure.color);
             console.log(song_3x);
             if (song_1) {
-                textChange("text", "a");
+                textChange("a");
                 musicScore++;
             } else if (song_2) {
-                textChange("text", "b");
+                textChange("b");
             } else if (song_3x) {
                 console.log("HERE");
-                textChange("text", "c");
+                textChange("c");
             }
             break;
         case 71:
@@ -398,28 +393,28 @@ function changeScene() {
             song_2 = false;
             song_3 = false;
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 72:
             djPlayThatSong(sounds.scandalous, 10000);
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             songChoice("Mya - Case of the ex", "Ciara - Like a boy",
                 "Miss Teeq - Scandalous", "'One more time'");
             $("#next").hide();
             $('#button1').on('click', function() {
                 { song_1 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button2').on('click', function() {
                 { song_2 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button3').on('click', function() {
                 { song_3 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button4').on('click', function() {
@@ -429,11 +424,11 @@ function changeScene() {
         case 73:
             nameChange(Closure.name, Closure.color);
             if (song_1) {
-                textChange("text", "a");
+                textChange("a");
             } else if (song_2) {
-                textChange("text", "b");
+                textChange("b");
             } else if (song_3) {
-                textChange("text", "c");
+                textChange("c");
                 musicScore++;
             }
             break;
@@ -442,12 +437,12 @@ function changeScene() {
             song_2 = false;
             song_3 = false;
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 75:
             djPlayThatSong(sounds.queen, 10000);
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             songChoice("Destiny's Child - Independant woman",
                 "Tony Braxton - He wasn't man enough",
                 "Whitney Houston - Queen of the night",
@@ -455,17 +450,17 @@ function changeScene() {
             $("#next").hide();
             $('#button1').on('click', function() {
                 { song_1 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button2').on('click', function() {
                 { song_2 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button3').on('click', function() {
                 { song_3 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button4').on('click', function() {
@@ -475,11 +470,11 @@ function changeScene() {
         case 76:
             nameChange(Closure.name, Closure.color);
             if (song_1) {
-                textChange("text", "a");
+                textChange("a");
             } else if (song_2) {
-                textChange("text", "b");
+                textChange("b");
             } else if (song_3) {
-                textChange("text", "c");
+                textChange("c");
                 musicScore++;
             }
             break;
@@ -489,17 +484,17 @@ function changeScene() {
             song_2 = false;
             song_3 = false;
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 78:
             nameChange(Emilie.name, Emilie.color);
-            txt;
+            textChange();
             break;
 
         case 79:
             djPlayThatSong(sounds.vogue, 20000);
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             songChoice("Natalie Imbruglia - Torn",
                 "Madonna - Vogue",
                 "Freeland - Borderline",
@@ -507,17 +502,17 @@ function changeScene() {
             $("#next").hide();
             $('#button1').on('click', function() {
                 { song_1 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button2').on('click', function() {
                 { song_2 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button3').on('click', function() {
                 { song_3 = true; }
-                deleteAllThat("#button4");
+                deleteButtons(button1, button2, button3, button4);
                 $("#next").show();
             });
             $('#button4').on('click', function() {
@@ -527,66 +522,60 @@ function changeScene() {
         case 80:
             nameChange(Closure.name, Closure.color);
             if (song_1) {
-                textChange("text", "a");
+                textChange("a");
             } else if (song_2) {
                 musicScore++;
-                textChange("text", "b");
+                textChange("b");
             } else if (song_3) {
-                textChange("text", "c");
+                textChange("c");
             }
             break;
         case 81:
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             song_1 = false;
             song_2 = false;
             song_3 = false;
             break;
         case 82:
             nameChange(Closure.name, Closure.color);
-            textChange("text", "");
+            textChange();
             break;
 
         case 83:
             console.log("On est à 83");
             nameChange(Closure.name, Closure.color);
             if (musicScore <= 2) {
-                textChange("text", "a");
+                textChange("a");
             }
             if (musicScore === 3) {
-                textChange("text", "b");
+                textChange("b");
             }
             if (musicScore === 4) {
-                textChange("text", "c");
+                textChange("c");
             }
             break;
         case 84:
             nameChange(Emilie.name, Emilie.color);
-            txt;
+            textChange();
             break;
         case 85:
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 86:
             nameChange(Closure.name, Closure.color);
-            txt;
+            textChange();
             break;
         case 87:
             nameChange(Emilie.name, Emilie.color);
-            txt;
+            textChange();
             break;
-
-
-
-
-
-
 
 
         default:
             nameChange(Emilie.name, Emilie.color);
-            textChange("text", "");
+            textChange();
             break;
     }
 
@@ -597,10 +586,19 @@ function changeScene() {
 // ================= THE FUNCTIONS ===================
 // ===================================================
 
-function textChange(textPlaceHolder, path) {
-    console.log("Text change", textPlaceHolder, path, magicNum);
-    $("p").text(eval(textPlaceHolder + "_" + path + magicNum));
-    // console.log(textPlaceHolder + "_" + path + magicNum);
+function textChange(path, fontSize) {
+    if (path === undefined) {
+        path = "";
+    }
+
+    if (fontSize === undefined) {
+        $("p").css("font-size", "1.25em");
+    } else {
+        $("p").css("font-size", fontSize + "em");
+    }
+
+    $("p").text(texts["text_" + path + currentScene]);
+    // console.log(textPlaceHolder + "_" + path + currentScene);
 }
 
 //function textillate() {
@@ -628,29 +626,11 @@ function bgChange(theBG) {
 }
 
 // this locks me with two buttons, but in my case that's fine
-function addButtons(value1, value2) {
-    var b1 = $("<button id='button1'>" + value1 + "</button>");
-    $(".button-space").append(b1);
-    var b2 = $("<button id='button2'>" + value2 + "</button>");
-    $(".button-space").append(b2);
-}
-
-function addThreeButtons() {
-    var b1 = $("<button id='button1'>Rock</button>");
-    $(".button-space").append(b1);
-    var b2 = $("<button id='button2'>Paper</button>");
-    $(".button-space").append(b2);
-    var b3 = $("<button id='button3'>Scissors</button>");
-    $(".button-space").append(b3);
-}
-
-function addThreeButtons2() {
-    var b1 = $("<button id='button1'>Smash some scissors</button>");
-    $(".button-space").append(b1);
-    var b2 = $("<button id='button2'>Wrap some rocks</button>");
-    $(".button-space").append(b2);
-    var b3 = $("<button id='button3'>Cut some paper</button>");
-    $(".button-space").append(b3);
+function addButtons() {
+    for (i = 1; i < arguments.length + 1; i++) {
+        var button = $("<button id='button" + i + "'>" + arguments[i - 1] + "</button>");
+        $(".button-space").append(button);
+    }
 }
 
 function songChoice(v1, v2, v3, v4) {
@@ -666,23 +646,9 @@ function songChoice(v1, v2, v3, v4) {
 }
 
 function deleteButtons() {
-    $("#button1").remove();
-    $("#button2").remove();
-}
-
-function deleteThreeButtons() {
-    $("#button1").remove();
-    $("#button2").remove();
-    $("#button3").remove();
-}
-
-function deleteSomeButtons(value) {
-    $(value).remove();
-}
-
-function deleteAllThat(value) {
-    deleteThreeButtons();
-    deleteSomeButtons(value);
+    for (i = 1; i < arguments.length + 1; i++) {
+        $("#button" + i).remove();
+    }
 }
 
 function nextOff() {

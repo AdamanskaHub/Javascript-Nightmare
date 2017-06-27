@@ -143,38 +143,42 @@ button:hover {
     border-color: #0e4d4e;
 }
 
-
-}
 #button4 {
     width: initial;
     float: right;
     margin: -50px 0 0 0;
 }
+
 .char1 {
     height: 400px;
     width: 300px;
     /*This is a box in which I'll put images with transparent BG!
     background-color: purple;*/
 }
+
 .char2 {
     height: 400px;
     width: 350px;
     /*This is a box in which I'll put images with transparent BG!
     background-color: teal;*/
 }
+
 h3 {
     font-family: "Amaranth", sans-serif;
     font-size: 1.5em;
     margin: 10px 0 0 0;
 }
+
 .border {
     border: 2px solid #bad455;
 }
+
 
 /* The animation code 
 @keyframes example {
     to {background-color: yellow;}
 }*/
+
 
 /* The element to apply the animation to 
 div {
