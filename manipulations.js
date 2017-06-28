@@ -456,6 +456,7 @@ function changeScene(sceneNumber) {
             addButtons("POOL", "ROAM", "DEAN", "WORD", "COPY", "FEND", "FOES", "DIED", "TIES");
             $("#next").hide();
             setSceneListeners();
+
             break;
         case 95:
             nameChange(RegEx.name, RegEx.color);
@@ -470,6 +471,9 @@ function changeScene(sceneNumber) {
             nameChange(RegEx.name, RegEx.color);
             textChange();
             char2Change(RegEx.smile);
+            bgChange(BG.room);
+            console.log("ON Y ESTüüüüüüOLPKJOH");
+            $("#next").show();
             break;
         case 201:
             // $("index.html").
@@ -511,6 +515,10 @@ function textChangeSpecial(path, scene) {
         path = "";
     }
 
+    console.log('====');
+    console.log('scene PASSING TO TEXTCHANGESPECIAL');
+    console.log(scene);
+    console.log('====');
     $("p").text(texts["text_" + path + scene]);
     // console.log(textPlaceHolder + "_" + path + currentScene);
 }
@@ -593,13 +601,18 @@ function djPlayThatSong(song, time, startPos) {
 }
 
 function countingWords(theWord) {
-    if (theWord < 3) {
+    if (theWord < 2) {
         theWord++;
         console.log("word = " + theWord);
         return theWord;
     }
-    if (theWord === 3) {
+}
+
+function gertrude(thePath) {
+    if (wordOne < 2) {
+        wordOne = countingWords(wordOne);
+        textChangeSpecial(thePath, 95);
+    } else {
         changeScene(200);
-        console.log("changement de scène");
     }
 }

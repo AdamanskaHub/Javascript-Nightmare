@@ -67,8 +67,7 @@ function setSceneListeners() {
                 $("#next").show();
                 break;
             case 94:
-                countingWords(wordOne);
-                textChangeSpecial("b", 95);
+                gertrude("b");
                 break;
         }
     });
@@ -141,8 +140,7 @@ function setSceneListeners() {
                 $("#next").show();
                 break;
             case 94:
-                countingWords(wordOne);
-                textChangeSpecial("b", 95);
+                gertrude("b");
                 break;
         }
     });
@@ -197,8 +195,7 @@ function setSceneListeners() {
                 $("#next").show();
                 break;
             case 94:
-                countingWords(wordOne);
-                textChangeSpecial("a", 95);
+                gertrude("a");
                 break;
         }
     });
@@ -207,8 +204,7 @@ function setSceneListeners() {
     $('#button4').on('click', function() {
         switch (currentScene) {
             case 94:
-                countingWords(wordOne);
-                textChangeSpecial("b", 95);
+                gertrude("b");
                 break;
 
         }
@@ -216,8 +212,7 @@ function setSceneListeners() {
     $('#button5').on('click', function() {
         switch (currentScene) {
             case 94:
-                countingWords(wordOne);
-                textChangeSpecial("b", 95);
+                gertrude("b");
                 break;
 
         }
@@ -225,9 +220,7 @@ function setSceneListeners() {
     $('#button6').on('click', function() {
         switch (currentScene) {
             case 94:
-                countingWords(wordOne);
-                textChangeSpecial("b", 95);
-                // $("#next").show();
+                gertrude("b");
                 break;
 
         }
@@ -247,8 +240,7 @@ function setSceneListeners() {
     $('#button8').on('click', function() {
         switch (currentScene) {
             case 94:
-                countingWords(wordOne);
-                textChangeSpecial("b", 95);
+                gertrude("b");
                 break;
 
         }
@@ -256,8 +248,7 @@ function setSceneListeners() {
     $('#button9').on('click', function() {
         switch (currentScene) {
             case 94:
-                countingWords(wordOne);
-                textChangeSpecial("c", 95);
+                gertrude("c");
                 break;
 
         }
