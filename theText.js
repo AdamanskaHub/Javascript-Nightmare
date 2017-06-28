@@ -1,5 +1,6 @@
 var musicScore = 0;
 var wordOne = 0;
+var wordTwo = 0;
 
 // ============================================
 // ============== CHARACTERS ==================
@@ -7,12 +8,19 @@ var wordOne = 0;
 
 var Emilie = {
     name: "Emilie",
-    hey: "img/emi-hey.png",
-    what: "img/emi-what.png",
     happy: "img/emi-happy.png",
-    ugh: "img/emi-ugh.png",
+    idea: "img/emi-idea.png",
+    no: "img/emi-no.png",
+    nope: "img/emi-nope.png",
     grumpy: "img/emi-grumpy.png",
+    point: "img/emi-point.png",
+    ok: "img/emi-ok.png",
     surprised: "img/emi-surprised.png",
+    suspicious: "img/emi-suspicious.png",
+    scream: "img/emi-scream.png",
+    thinking: "img/emi-thinking.png",
+    wtf: "img/emi-wtf.png",
+    yes: "img/emi-yes.png",
     sleeping: "img/emi-sleeping.png",
     color: "#D893EE"
 };
@@ -49,8 +57,8 @@ var Closure = {
 
 var RegEx = {
     name: "RegEx",
-    neutral: "img/js-neutral.png",
-    threatning: "img/js-threatning.png",
+    neutral: "img/reg-smirk.png",
+    angry: "img/js-unhappy.png",
     color: "#93A4EE"
 };
 
@@ -263,7 +271,7 @@ var texts = {
     text_100: "Good luck.",
 
     // ========== CHOICE ========
-    text_101: "Text relatif aux mots2",
+    text_101: "Think carefully.",
     text_a101: "0 are right.",
     text_b101: "1 is right.",
     text_c101: "2 are right.",

@@ -31,6 +31,7 @@ function setSceneListeners() {
                 deleteButtons(button1, button2, button3);
                 deleteRepeat();
                 changeScene(70);
+                char1Change(Emilie.ok);
                 textChange("a");
                 musicScore++;
                 $("#next").show();
@@ -48,6 +49,7 @@ function setSceneListeners() {
                 deleteRepeat();
                 changeScene(76);
                 textChange("a");
+                char1Change(Emilie.sad);
                 char2Change(Closure.wtf);
                 $("#next").show();
                 break;
@@ -56,6 +58,7 @@ function setSceneListeners() {
                 deleteRepeat();
                 changeScene(80);
                 textChange("a");
+                char1Change(Emilie.sad);
                 char2Change(Closure.wtf);
                 $("#next").show();
                 break;
@@ -64,9 +67,11 @@ function setSceneListeners() {
                 changeScene(91);
                 textChange("a");
                 char2Change(RegEx.smile);
+                char1Change(Emilie.yes);
                 $("#next").show();
                 break;
             case 94:
+                console.log("pool clicked");
                 gertrude("b");
                 break;
             case 101:
@@ -108,6 +113,7 @@ function setSceneListeners() {
                 deleteRepeat();
                 changeScene(70);
                 textChange("b");
+                char1Change(Emilie.sad);
                 char2Change(Closure.wtf);
                 $("#next").show();
                 break;
@@ -124,6 +130,7 @@ function setSceneListeners() {
                 deleteRepeat();
                 changeScene(76);
                 textChange("b");
+                char1Change(Emilie.sad);
                 char2Change(Closure.wtf);
                 $("#next").show();
                 break;
@@ -132,7 +139,8 @@ function setSceneListeners() {
                 deleteRepeat();
                 changeScene(80);
                 textChange("b");
-                char2Change(Closure.wtf);
+                char1Change(Emilie.sad);
+                char2Change(Closure.mic);
                 $("#next").show();
                 break;
             case 90:
@@ -140,6 +148,7 @@ function setSceneListeners() {
                 changeScene(91);
                 textChange("b");
                 char2Change(RegEx.smile);
+                char1Change(Emilie.sad);
                 $("#next").show();
                 break;
             case 94:
@@ -170,6 +179,7 @@ function setSceneListeners() {
                 deleteRepeat();
                 changeScene(70);
                 textChange("c");
+                char1Change(Emilie.sad);
                 char2Change(Closure.wtf);
                 $("#next").show();
                 break;
@@ -178,6 +188,7 @@ function setSceneListeners() {
                 deleteRepeat();
                 changeScene(73);
                 textChange("c");
+                char1Change(Emilie.ok);
                 musicScore++;
                 char2Change(Closure.mic);
                 $("#next").show();
@@ -187,6 +198,7 @@ function setSceneListeners() {
                 deleteRepeat();
                 changeScene(76);
                 textChange("c");
+                char1Change(Emilie.yes);
                 char2Change(Closure.mic);
                 musicScore++;
                 $("#next").show();
