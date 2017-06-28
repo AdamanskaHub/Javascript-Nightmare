@@ -4,13 +4,10 @@
 
 var currentScene = 0;
 
-var path_a, path_b, path_1a, path_1b, path_1c,
-    path_2a, path_2b, path_2c,
-    path_3a, path_3b, song_1, song_2, song_3, song_3x = false;
+var path_3a, path_3b = false;
+// I need those
 
 $(document).ready(function() {
-
-
 
     $('button').on('click', function() {
 
@@ -19,7 +16,7 @@ $(document).ready(function() {
 
         changeScene(currentScene);
 
-    }); // click button next end
+    });
 
 });
 
@@ -30,7 +27,14 @@ function changeScene(sceneNumber) {
     switch (sceneNumber) {
         case 1:
             // ==================
-            // djPlayThatSong(sounds.round1, 10000)
+            // var audio = document.createElement('audio');
+            // audio.src = sounds.round1;
+            // audio.play();
+            // audio.pause();
+            // audio.currentTime = 13;
+            // audio.play();
+            // // djPlayThatSong(sounds.round1, 10000, 0);
+
             // ==================
             textChange();
             nameChange("Mosquito", '#fff');
@@ -101,29 +105,10 @@ function changeScene(sceneNumber) {
             addButtons("About to tell me how I get out", "Disgrace, hell, stuff like that");
             $("#next").hide();
             setSceneListeners();
-            // $('#button1').on('click', function() {
-            //     { path_a = true; }
-            //     console.log("a = " + path_a);
-            //     // currentScene++;
-            //     console.log(currentScene);
-            //     deleteButtons(button1, button2);
-            //     $("#next").show();
-            // });
-            // $('#button2').on('click', function() {
-            //     { path_b = true; }
-            //     deleteButtons(button2, button1);
-            //     $("#next").show();
-            // });
-            // I'm not clicking next and can't increase my count!
             break;
 
         case 17:
             nameChange(JSMonster.name, JSMonster.color);
-            // if (path_a) {
-            //     textChange("a");
-            // } else if (path_b) {
-            //     textChange("b");
-            // }
             break;
 
         case 18:
@@ -206,38 +191,20 @@ function changeScene(sceneNumber) {
             addButtons("Rock", "Paper", "Scissors");
             $("#next").hide();
             setSceneListeners();
-            // $('#button1').on('click', function() {
-            //     { path_1a = true; }
-            //     deleteButtons(button1, button2, button3);
-            //     $("#next").show();
-            // });
-            // $('#button2').on('click', function() {
-            //     { path_1b = true; }
-            //     deleteButtons(button1, button2, button3);
-            //     $("#next").show();
-            // });
-            // $('#button3').on('click', function() {
-            //     { path_1c = true; }
-            //     deleteButtons(button1, button2, button3);
-            //     $("#next").show();
-            // });
             break;
 
         case 45:
             nameChange(Ajax.name, Ajax.color);
-            // if (path_1a) {
-            //     textChange("a");
-            // } else if (path_1b) {
-            //     textChange("b");
-            // } else if (path_1c) {
-            //     textChange("c");
-            // }
             break;
         case 46:
             nameChange(Ajax.name, Ajax.color);
             textChange();
             break;
         case 47:
+            nameChange(Emilie.name, Emilie.color);
+            textChange();
+            break;
+        case 48:
             nameChange(Ajax.name, Ajax.color);
             textChange();
             break;
@@ -248,34 +215,14 @@ function changeScene(sceneNumber) {
                 "Cut some paper");
             $("#next").hide();
             setSceneListeners();
-            // $('#button1').on('click', function() {
-            //     { path_2a = true; }
-            //     deleteButtons(button1, button2, button3);
-            //     $("#next").show();
-            // });
-            // $('#button2').on('click', function() {
-            //     { path_2b = true; }
-            //     deleteButtons(button1, button2, button3);
-            //     $("#next").show();
-            // });
-            // $('#button3').on('click', function() {
-            //     { path_2c = true; }
-            //     deleteButtons(button1, button2, button3);
-            //     $("#next").show();
-            // });
             break;
 
         case 50:
             nameChange(Ajax.name, Ajax.color);
-            // if (path_2a) {
-            //     textChange("a");
-            // } else if (path_2b) {
-            //     textChange("b");
-            // } else if (path_2c) {
-            //     textChange("c");
-            // }
+            console.log(musicScore);
             break;
         case 51:
+            nameChange(Emilie.name, Emilie.color);
             $(".char1").effect("shake");
             textChange(undefined, 2.5);
             break;
@@ -288,6 +235,7 @@ function changeScene(sceneNumber) {
             textChange();
             break;
         case 55:
+            nameChange(Emilie.name, Emilie.color);
             textChange(undefined, 2);
             break;
         case 56:
@@ -339,10 +287,12 @@ function changeScene(sceneNumber) {
             textChange();
             break;
         case 65:
+            char2Change(Closure.smile);
             nameChange(Closure.name, Closure.color);
             textChange();
             break;
         case 66:
+            char2Change(Closure.mic);
             nameChange(Closure.name, Closure.color);
             textChange();
             break;
@@ -351,100 +301,47 @@ function changeScene(sceneNumber) {
             textChange();
             break;
         case 69:
-            djPlayThatSong(sounds.pop, 10000);
+            djPlayThatSong(sounds.pop, 10000, 33);
+            char2Change(Closure.smile);
             nameChange(Closure.name, Closure.color);
             textChange();
             songChoice("Pop - N'sync", "Britney Spears - Slave 4 u",
-                "BackstreetBoys - Everybody", "'I need to listen to it again'");
+                "BackstreetBoys - Everybody");
+            repeatButton("I need to listen to it again");
             $("#next").hide();
             setSceneListeners();
-            // $('#button1').on('click', function() {
-            //     { song_1 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button2').on('click', function() {
-            //     { song_2 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button3').on('click', function() {
-            //     song_3x = true;
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            //     console.log("song_3", song_3x, "magic", currentScene);
-            // });
-            // $('#button4').on('click', function() {
-            //     djPlayThatSong(sounds.pop, 10000);
-            // });
             break;
         case 70:
             nameChange(Closure.name, Closure.color);
-            console.log(song_3x);
-            // if (song_1) {
-            //     textChange("a");
-            //     musicScore++;
-            // } else if (song_2) {
-            //     textChange("b");
-            // } else if (song_3x) {
-            //     console.log("HERE");
-            //     textChange("c");
-            // }
             break;
         case 71:
-            // song_1 = false;
-            // song_2 = false;
-            // song_3 = false;
+            console.log(musicScore);
+            char2Change(Closure.mic);
             nameChange(Closure.name, Closure.color);
             textChange();
             break;
         case 72:
-            djPlayThatSong(sounds.scandalous, 10000);
+            djPlayThatSong(sounds.scandalous, 9000, 3);
+            char2Change(Closure.smile);
             nameChange(Closure.name, Closure.color);
             textChange();
             songChoice("Mya - Case of the ex", "Ciara - Like a boy",
                 "Miss Teeq - Scandalous", "'One more time'");
             $("#next").hide();
             setSceneListeners();
-            // $('#button1').on('click', function() {
-            //     { song_1 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button2').on('click', function() {
-            //     { song_2 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button3').on('click', function() {
-            //     { song_3 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button4').on('click', function() {
-            //     djPlayThatSong(sounds.scandalous, 10000);
-            // });
             break;
         case 73:
             nameChange(Closure.name, Closure.color);
-            // if (song_1) {
-            //     textChange("a");
-            // } else if (song_2) {
-            //     textChange("b");
-            // } else if (song_3) {
-            //     textChange("c");
-            //     musicScore++;
-            // }
             break;
         case 74:
-            // song_1 = false;
-            // song_2 = false;
-            // song_3 = false;
+            console.log(musicScore);
+            char2Change(Closure.mic);
             nameChange(Closure.name, Closure.color);
             textChange();
             break;
         case 75:
-            djPlayThatSong(sounds.queen, 10000);
+            djPlayThatSong(sounds.queen, 12000, 0);
+            char2Change(Closure.smile);
             nameChange(Closure.name, Closure.color);
             textChange();
             songChoice("Destiny's Child - Independant woman",
@@ -453,41 +350,14 @@ function changeScene(sceneNumber) {
                 "'Again please'");
             $("#next").hide();
             setSceneListeners();
-            // $('#button1').on('click', function() {
-            //     { song_1 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button2').on('click', function() {
-            //     { song_2 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button3').on('click', function() {
-            //     { song_3 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button4').on('click', function() {
-            //     djPlayThatSong(sounds.queen, 10000);
-            // });
             break;
         case 76:
             nameChange(Closure.name, Closure.color);
-            // if (song_1) {
-            //     textChange("a");
-            // } else if (song_2) {
-            //     textChange("b");
-            // } else if (song_3) {
-            //     textChange("c");
-            //     musicScore++;
-            // }
             break;
 
         case 77:
-            // song_1 = false;
-            // song_2 = false;
-            // song_3 = false;
+            console.log(musicScore);
+            char2Change(Closure.mic);
             nameChange(Closure.name, Closure.color);
             textChange();
             break;
@@ -497,7 +367,8 @@ function changeScene(sceneNumber) {
             break;
 
         case 79:
-            djPlayThatSong(sounds.vogue, 20000);
+            djPlayThatSong(sounds.vogue, 8000, 17);
+            char2Change(Closure.smile);
             nameChange(Closure.name, Closure.color);
             textChange();
             songChoice("Natalie Imbruglia - Torn",
@@ -506,45 +377,19 @@ function changeScene(sceneNumber) {
                 "'Again please'");
             $("#next").hide();
             setSceneListeners();
-            // $('#button1').on('click', function() {
-            //     { song_1 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button2').on('click', function() {
-            //     { song_2 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button3').on('click', function() {
-            //     { song_3 = true; }
-            //     deleteButtons(button1, button2, button3, button4);
-            //     $("#next").show();
-            // });
-            // $('#button4').on('click', function() {
-            //     djPlayThatSong(sounds.vogue, 20000);
-            // });
             break;
         case 80:
             nameChange(Closure.name, Closure.color);
-            // if (song_1) {
-            //     textChange("a");
-            // } else if (song_2) {
-            //     musicScore++;
-            //     textChange("b");
-            // } else if (song_3) {
-            //     textChange("c");
-            // }
             break;
         case 81:
+            console.log(musicScore);
+            char2Change(Closure.neutral);
             nameChange(Closure.name, Closure.color);
             textChange();
-            // song_1 = false;
-            // song_2 = false;
-            // song_3 = false;
             break;
         case 82:
             nameChange(Closure.name, Closure.color);
+            char2Change(Closure.neutral);
             textChange();
             break;
 
@@ -552,12 +397,15 @@ function changeScene(sceneNumber) {
             nameChange(Closure.name, Closure.color);
             if (musicScore <= 2) {
                 textChange("a");
+                char2Change(Closure.wtf);
             }
             if (musicScore === 3) {
                 textChange("b");
+                char2Change(Closure.neutral);
             }
             if (musicScore === 4) {
                 textChange("c");
+                char2Change(Closure.smile);
             }
             break;
         case 84:
@@ -566,16 +414,68 @@ function changeScene(sceneNumber) {
             break;
         case 85:
             nameChange(Closure.name, Closure.color);
+            char2Change(Closure.neutral);
             textChange();
             break;
         case 86:
             nameChange(Closure.name, Closure.color);
+            char2Change(Closure.smile);
+            $('.char2').animate({ marginRight: "-1000px" }, 1500);
             textChange();
             break;
         case 87:
             nameChange(Emilie.name, Emilie.color);
             textChange();
             break;
+        case 88:
+
+        case 89:
+            nameChange(RegEx.name, RegEx.color);
+            char2Change(RegEx.smile);
+            $('.char2').animate({ marginRight: "0px" }, 1500);
+            textChange();
+            break;
+        case 90:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            addButtons("Finally, bring it.", "RegEx! Oh no... That's just too hard...");
+            $("#next").hide();
+            setSceneListeners();
+            break;
+        case 91:
+            nameChange(RegEx.name, RegEx.color);
+            break;
+        case 92:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+
+        case 94:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            addButtons("POOL", "ROAM", "DEAN", "WORD", "COPY", "FEND", "FOES", "DIED", "TIES");
+            $("#next").hide();
+            setSceneListeners();
+            break;
+        case 95:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+        case 96:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+
+        case 200:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            char2Change(RegEx.smile);
+            break;
+        case 201:
+            // $("index.html").
+            load("gameover.html");
+            break;
+
 
 
         default:
@@ -603,6 +503,15 @@ function textChange(path, fontSize) {
     }
 
     $("p").text(texts["text_" + path + currentScene]);
+    // console.log(textPlaceHolder + "_" + path + currentScene);
+}
+
+function textChangeSpecial(path, scene) {
+    if (path === undefined) {
+        path = "";
+    }
+
+    $("p").text(texts["text_" + path + scene]);
     // console.log(textPlaceHolder + "_" + path + currentScene);
 }
 
@@ -645,8 +554,10 @@ function songChoice(v1, v2, v3, v4) {
     $(".button-space").append(b2);
     var b3 = $("<button id='button3'>" + v3 + "</button>");
     $(".button-space").append(b3);
+}
 
-    var b4 = $("<button id='button4'>" + v4 + "</button>");
+function repeatButton(text) {
+    var b4 = $("<button id='buttonx'>" + text + "</button>");
     $(".text-content").append(b4);
 }
 
@@ -654,6 +565,10 @@ function deleteButtons() {
     for (i = 1; i < arguments.length + 1; i++) {
         $("#button" + i).remove();
     }
+}
+
+function deleteRepeat() {
+    $("#buttonx").remove();
 }
 
 function nextOff() {
@@ -664,12 +579,27 @@ function music(soundFile) {
     soundFile.play();
 }
 
-function djPlayThatSong(song, time) {
+function djPlayThatSong(song, time, startPos) {
     var audio = document.createElement('audio');
     audio.src = song;
+    audio.play();
+    audio.pause();
+    audio.currentTime = startPos;
     audio.play();
     setTimeout(function() {
         audio.pause();
         audio.currentTime = 0;
     }, time);
+}
+
+function countingWords(theWord) {
+    if (theWord < 3) {
+        theWord++;
+        console.log("word = " + theWord);
+        return theWord;
+    }
+    if (theWord === 3) {
+        changeScene(200);
+        console.log("changement de scène");
+    }
 }

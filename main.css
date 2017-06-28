@@ -101,8 +101,10 @@ button:hover {
 .button-space {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 45%;
+    /* align-items: center; */
+    /* align-content: center; */
+    align-self: center;
+    /* height: 45%; */
 }
 
 .button-space>button {
@@ -118,7 +120,13 @@ button:hover {
 
 #button1,
 #button2,
-#button3 {
+#button3,
+#button4,
+#button5,
+#button6,
+#button7,
+#button8,
+#button9 {
     margin-bottom: 10px;
     font-size: 0.85em;
     background-color: rgb(67, 76, 115);
@@ -137,13 +145,31 @@ button:hover {
 #button2:active,
 #button3:hover,
 #button3:active,
-#button3:active {
+#button3:active,
+#button4:hover,
+#button4:active,
+#button4:active,
+#button5:hover,
+#button5:active,
+#button5:active,
+#button6:hover,
+#button6:active,
+#button6:active,
+#button7:hover,
+#button7:active,
+#button7:active,
+#button8:hover,
+#button8:active,
+#button8:active,
+#button9:hover,
+#button9:active,
+#button9:active {
     color: #99ffff;
     background: linear-gradient(rgb(63, 167, 179), rgb(19, 105, 105));
     border-color: #0e4d4e;
 }
 
-#button4 {
+#buttonx {
     width: initial;
     float: right;
     margin: -50px 0 0 0;

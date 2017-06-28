@@ -1,5 +1,4 @@
 function setSceneListeners() {
-
     $('#button1').on('click', function() {
         switch (currentScene) {
             case 16:
@@ -29,29 +28,47 @@ function setSceneListeners() {
                 $("#next").show();
                 break;
             case 69:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(70);
                 textChange("a");
                 musicScore++;
                 $("#next").show();
                 break;
             case 72:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(73);
                 textChange("a");
+                char2Change(Closure.mic);
                 $("#next").show();
                 break;
             case 75:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(76);
                 textChange("a");
+                char2Change(Closure.wtf);
                 $("#next").show();
                 break;
             case 79:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(80);
                 textChange("a");
+                char2Change(Closure.wtf);
                 $("#next").show();
+                break;
+            case 90:
+                deleteButtons(button1, button2);
+                changeScene(91);
+                textChange("a");
+                char2Change(RegEx.smile);
+                $("#next").show();
+                break;
+            case 94:
+                countingWords(wordOne);
+                textChangeSpecial("b", 95);
                 break;
         }
     });
@@ -85,28 +102,47 @@ function setSceneListeners() {
                 // path for 61
                 break;
             case 69:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(70);
                 textChange("b");
+                char2Change(Closure.wtf);
                 $("#next").show();
                 break;
             case 72:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(73);
                 textChange("b");
+                char2Change(Closure.wtf);
                 $("#next").show();
                 break;
             case 75:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(76);
                 textChange("b");
+                char2Change(Closure.wtf);
                 $("#next").show();
                 break;
             case 79:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(80);
                 textChange("b");
+                char2Change(Closure.wtf);
                 $("#next").show();
+                break;
+            case 90:
+                deleteButtons(button1, button2);
+                changeScene(91);
+                textChange("b");
+                char2Change(RegEx.smile);
+                $("#next").show();
+                break;
+            case 94:
+                countingWords(wordOne);
+                textChangeSpecial("b", 95);
                 break;
         }
     });
@@ -126,34 +162,109 @@ function setSceneListeners() {
                 $("#next").show();
                 break;
             case 69:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(70);
                 textChange("c");
+                char2Change(Closure.wtf);
                 $("#next").show();
                 break;
             case 72:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(73);
                 textChange("c");
                 musicScore++;
+                char2Change(Closure.mic);
                 $("#next").show();
                 break;
             case 75:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(76);
                 textChange("c");
+                char2Change(Closure.mic);
                 musicScore++;
                 $("#next").show();
                 break;
             case 79:
-                deleteButtons(button1, button2, button3, button4);
+                deleteButtons(button1, button2, button3);
+                deleteRepeat();
                 changeScene(80);
                 textChange("c");
+                musicScore++;
+                char2Change(Closure.mic);
                 $("#next").show();
+                break;
+            case 94:
+                countingWords(wordOne);
+                textChangeSpecial("a", 95);
                 break;
         }
     });
+
+
     $('#button4').on('click', function() {
+        switch (currentScene) {
+            case 94:
+                countingWords(wordOne);
+                textChangeSpecial("b", 95);
+                break;
+
+        }
+    });
+    $('#button5').on('click', function() {
+        switch (currentScene) {
+            case 94:
+                countingWords(wordOne);
+                textChangeSpecial("b", 95);
+                break;
+
+        }
+    });
+    $('#button6').on('click', function() {
+        switch (currentScene) {
+            case 94:
+                countingWords(wordOne);
+                textChangeSpecial("b", 95);
+                // $("#next").show();
+                break;
+
+        }
+    });
+    $('#button7').on('click', function() {
+        switch (currentScene) {
+            case 94:
+                deleteButtons(button1, button2, button3, button4, button5, button6, button7, button8, button9);
+                changeScene(95);
+                textChange("d");
+                $("#next").show();
+                // Changer expression
+                break;
+
+        }
+    });
+    $('#button8').on('click', function() {
+        switch (currentScene) {
+            case 94:
+                countingWords(wordOne);
+                textChangeSpecial("b", 95);
+                break;
+
+        }
+    });
+    $('#button9').on('click', function() {
+        switch (currentScene) {
+            case 94:
+                countingWords(wordOne);
+                textChangeSpecial("c", 95);
+                break;
+
+        }
+    });
+
+
+    $('#buttonx').on('click', function() {
         switch (currentScene) {
             case 16:
                 deleteButtons(button1, button2);
@@ -162,17 +273,20 @@ function setSceneListeners() {
                 $("#next").show();
                 break;
             case 69:
-                djPlayThatSong(sounds.pop, 10000);
+                djPlayThatSong(sounds.pop, 10000, 33);
                 break;
             case 72:
-                djPlayThatSong(sounds.scandalous, 10000);
+                djPlayThatSong(sounds.scandalous, 9000, 3);
                 break;
             case 75:
-                djPlayThatSong(sounds.queen, 10000);
+                djPlayThatSong(sounds.queen, 12000);
                 break;
             case 75:
-                djPlayThatSong(sounds.vogue, 20000);
+                djPlayThatSong(sounds.vogue, 8000, 17);
                 break;
         }
     });
+
+
+
 }
