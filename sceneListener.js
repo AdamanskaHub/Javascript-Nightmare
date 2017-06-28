@@ -69,6 +69,9 @@ function setSceneListeners() {
             case 94:
                 gertrude("b");
                 break;
+            case 101:
+                martha("b");
+                break;
         }
     });
 
@@ -142,6 +145,9 @@ function setSceneListeners() {
             case 94:
                 gertrude("b");
                 break;
+            case 101:
+                martha("b");
+                break;
         }
     });
 
@@ -197,6 +203,9 @@ function setSceneListeners() {
             case 94:
                 gertrude("a");
                 break;
+            case 101:
+                martha("b");
+                break;
         }
     });
 
@@ -206,6 +215,9 @@ function setSceneListeners() {
             case 94:
                 gertrude("b");
                 break;
+            case 101:
+                martha("c");
+                break;
 
         }
     });
@@ -214,13 +226,18 @@ function setSceneListeners() {
             case 94:
                 gertrude("b");
                 break;
-
+            case 101:
+                martha("b");
+                break;
         }
     });
     $('#button6').on('click', function() {
         switch (currentScene) {
             case 94:
                 gertrude("b");
+                break;
+            case 101:
+                martha("b");
                 break;
 
         }
@@ -234,6 +251,9 @@ function setSceneListeners() {
                 $("#next").show();
                 // Changer expression
                 break;
+            case 101:
+                martha("b");
+                break;
 
         }
     });
@@ -242,13 +262,22 @@ function setSceneListeners() {
             case 94:
                 gertrude("b");
                 break;
-
+            case 101:
+                deleteButtons(button1, button2, button3, button4, button5, button6, button7, button8, button9);
+                changeScene(102);
+                textChange("d");
+                $("#next").show();
+                // Changer expression
+                break;
         }
     });
     $('#button9').on('click', function() {
         switch (currentScene) {
             case 94:
                 gertrude("c");
+                break;
+            case 101:
+                martha("b");
                 break;
 
         }

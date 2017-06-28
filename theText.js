@@ -256,8 +256,24 @@ var texts = {
     text_d95: "Well played, it was 'FOES'.",
     // ========== CHOICE ======== //
 
-    text_96: "Some text",
-    text_0000: "Tada!",
+    text_96: "I expected you to fail.",
+    text_97: "A final challenge.",
+    text_98: "If you are worthy I shall send you back to your world.",
+    text_99: "Alright. I'm focus. Ready!",
+    text_100: "Good luck.",
+
+    // ========== CHOICE ========
+    text_101: "Text relatif aux mots2",
+    text_a101: "0 are right.",
+    text_b101: "1 is right.",
+    text_c101: "2 are right.",
+    text_d101: "Well played, it was 'OFFLINE'.",
+    // ========== CHOICE ======== //
+
+    text_102: "Well done.",
+    text_103: "I keep my promise, leave.",
+    text_104: "Finally!",
+    text_105: "...but before you go...",
 
     text_200: "That is game over my dear..."
 };

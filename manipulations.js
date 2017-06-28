@@ -466,18 +466,62 @@ function changeScene(sceneNumber) {
             nameChange(RegEx.name, RegEx.color);
             textChange();
             break;
+        case 97:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+        case 98:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+        case 99:
+            nameChange(Emilie.name, Emilie.color);
+            textChange();
+            break;
+        case 100:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+        case 101:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            addButtons("SENDING", "SETTING", "WARRIOR", "OFFLINE", "WRITING", "WARNING", "TESTING", "ACQUIRE", "WELCOME");
+            $("#next").hide();
+            setSceneListeners();
 
+            break;
+        case 102:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+        case 103:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+        case 104:
+            nameChange(Emilie.name, Emilie.color);
+            textChange();
+            break;
+        case 105:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+
+
+
+
+            // ==================================
+            // ========== GAME OVER =============
         case 200:
             nameChange(RegEx.name, RegEx.color);
             textChange();
             char2Change(RegEx.smile);
-            bgChange(BG.room);
-            console.log("ON Y ESTüüüüüüOLPKJOH");
+            deleteButtons(button1, button2, button3, button4, button5, button6, button7, button8, button9);
             $("#next").show();
             break;
         case 201:
             // $("index.html").
-            load("gameover.html");
+            window.location.href = "gameover.html";
             break;
 
 
@@ -612,6 +656,15 @@ function gertrude(thePath) {
     if (wordOne < 2) {
         wordOne = countingWords(wordOne);
         textChangeSpecial(thePath, 95);
+    } else {
+        changeScene(200);
+    }
+}
+
+function martha(thePath) {
+    if (wordTwo < 2) {
+        wordTwo = countingWords(wordTwo);
+        textChangeSpecial(thePath, 102);
     } else {
         changeScene(200);
     }
