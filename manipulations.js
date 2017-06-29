@@ -193,7 +193,7 @@ function changeScene(sceneNumber) {
             $(".char2").fadeOut();
             break;
         case 33:
-            char2Change(Ajax.neutral);
+            char2Change(Ajax.sexy);
             $(".char2").fadeIn();
             nameChange(Ajax.name, Ajax.color);
             textChange();
@@ -205,24 +205,29 @@ function changeScene(sceneNumber) {
             break;
         case 35:
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.rage);
             textChange();
             break;
-        case 35:
+        case 36:
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.sexy);
             textChange();
             break;
         case 37:
             nameChange(Ajax.name, Ajax.color);
             char1Change(Emilie.wtf);
+            char2Change(Ajax.sexy);
             textChange();
             break;
         case 38:
             char1Change(Emilie.point);
+            char2Change(Ajax.nope);
             nameChange(Emilie.name, Emilie.color);
             textChange();
             break;
         case 39:
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.nope);
             textChange();
             break;
         case 41:
@@ -232,6 +237,7 @@ function changeScene(sceneNumber) {
             break;
         case 42:
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.smirk);
             textChange();
             break;
         case 43:
@@ -241,6 +247,7 @@ function changeScene(sceneNumber) {
             break;
         case 44:
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.smirk);
             char1Change(Emilie.thinking);
             textChange();
             addButtons("Rock", "Paper", "Scissors");
@@ -254,6 +261,7 @@ function changeScene(sceneNumber) {
             break;
         case 46:
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.smirk);
             textChange();
             break;
         case 47:
@@ -283,20 +291,24 @@ function changeScene(sceneNumber) {
         case 51:
             nameChange(Emilie.name, Emilie.color);
             char1Change(Emilie.scream);
+            char2Change(Ajax.smirk);
             $(".char1").effect("shake");
             textChange(undefined, 2.5);
             break;
         case 52:
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.sexy);
             textChange();
             break;
         case 53:
             nameChange(Emilie.name, Emilie.color);
+            char2Change(Ajax.sexy);
             char1Change(Emilie.point);
             textChange();
             break;
         case 54:
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.nope);
             textChange();
             break;
         case 55:
@@ -305,6 +317,7 @@ function changeScene(sceneNumber) {
             break;
         case 56:
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.angry);
             textChange();
             break;
         case 57:
@@ -331,6 +344,7 @@ function changeScene(sceneNumber) {
         case 59:
             char1Change(Emilie.ok);
             nameChange(Ajax.name, Ajax.color);
+            char2Change(Ajax.rage);
             if (path_3a) {
                 $('.char2').animate({ marginRight: "-1000px" }, 1500);
                 textChange("a");
@@ -529,6 +543,7 @@ function changeScene(sceneNumber) {
             break;
         case 91:
             nameChange(RegEx.name, RegEx.color);
+            char2Change(RegEx.smile);
             break;
         case 92:
             nameChange(RegEx.name, RegEx.color);
@@ -542,6 +557,7 @@ function changeScene(sceneNumber) {
             break;
         case 94:
             nameChange(RegEx.name, RegEx.color);
+            char2Change(RegEx.cool);
             textChange();
             addButtons("POOL", "ROAM", "DEAN", "WORD", "COPY", "FEND", "FOES", "DIED", "TIES");
             $("#next").hide();
@@ -553,6 +569,7 @@ function changeScene(sceneNumber) {
             break;
         case 96:
             nameChange(RegEx.name, RegEx.color);
+            char2Change(RegEx.smile);
             textChange();
             break;
         case 97:
@@ -581,10 +598,12 @@ function changeScene(sceneNumber) {
             break;
         case 102:
             nameChange(RegEx.name, RegEx.color);
+            char2Change(RegEx.cool);
             textChange();
             break;
         case 103:
             nameChange(RegEx.name, RegEx.color);
+            char2Change(RegEx.smile);
             textChange();
             break;
         case 104:
@@ -597,6 +616,7 @@ function changeScene(sceneNumber) {
             break;
         case 106:
             nameChange(RegEx.name, RegEx.color);
+            char2Change(RegEx.angry);
             textChange();
             addButtons("Yes! (I don't want to end here again!)", "I will. I'll make a Javascript alarm clock with cute animals!", "Nope. Jquery is the only thing I'm willing to use.");
             $("#next").hide();
@@ -614,7 +634,7 @@ function changeScene(sceneNumber) {
         case 200:
             nameChange(RegEx.name, RegEx.color);
             textChange();
-            char2Change(RegEx.smile);
+            char2Change(RegEx.cool);
             deleteButtons(button1, button2, button3, button4, button5, button6, button7, button8, button9);
             $("#next").show();
             break;

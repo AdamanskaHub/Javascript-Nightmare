@@ -12,11 +12,13 @@ function setSceneListeners() {
                 deleteButtons(button1, button2, button3);
                 changeScene(45);
                 textChange("a");
+                char2Change(Ajax.paper);
                 $("#next").show();
                 break;
             case 49:
                 deleteButtons(button1, button2, button3);
                 changeScene(50);
+                char2Change(Ajax.paper);
                 textChange("a");
                 $("#next").show();
                 break;
@@ -66,7 +68,7 @@ function setSceneListeners() {
                 deleteButtons(button1, button2);
                 changeScene(91);
                 textChange("a");
-                char2Change(RegEx.smile);
+                char2Change(RegEx.cool);
                 char1Change(Emilie.yes);
                 $("#next").show();
                 break;
@@ -81,6 +83,7 @@ function setSceneListeners() {
                 deleteButtons(button1, button2, button3);
                 changeScene(107);
                 textChange("a");
+                char2Change(RegEx.cool);
                 $("#next").show();
                 break;
         }
@@ -97,12 +100,14 @@ function setSceneListeners() {
             case 44:
                 deleteButtons(button1, button2, button3);
                 changeScene(45);
+                char2Change(Ajax.scissors);
                 textChange("b");
                 $("#next").show();
                 break;
             case 49:
                 deleteButtons(button1, button2, button3);
                 changeScene(50);
+                char2Change(Ajax.scissors);
                 textChange("b"); { path_3a = true; }
                 $("#next").show();
                 break;
@@ -167,6 +172,7 @@ function setSceneListeners() {
                 deleteButtons(button1, button2, button3);
                 changeScene(107);
                 textChange("b");
+                char2Change(RegEx.cool);
                 $("#next").show();
                 break;
         }
@@ -177,12 +183,14 @@ function setSceneListeners() {
             case 44:
                 deleteButtons(button1, button2, button3);
                 changeScene(45);
+                char2Change(Ajax.rock);
                 textChange("c");
                 $("#next").show();
                 break;
             case 49:
                 deleteButtons(button1, button2, button3);
                 changeScene(50);
+                char2Change(Ajax.rock);
                 textChange("c");
                 $("#next").show();
                 break;

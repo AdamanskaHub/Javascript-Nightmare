@@ -41,8 +41,14 @@ var JSMonster = {
 
 var Ajax = {
     name: "Ajax",
-    neutral: "img/js-neutral.png",
-    threatning: "img/js-threatning.png",
+    angry: "img/aj-angry.png",
+    nope: "img/aj-nope.png",
+    paper: "img/aj-paper.png",
+    rage: "img/aj-rage.png",
+    rock: "img/aj-rock.png",
+    scissors: "img/aj-scissors.png",
+    sexy: "img/aj-sexy.png",
+    smirk: "img/aj-smirk.png",
     color: "#93A4EE"
 };
 
@@ -243,6 +249,8 @@ var texts = {
     text_86: "Tada!",
     text_87: "Well that was easy.",
     text_88: "I guess it's time for the final boss.",
+    // ======== FINAL TRIAL !!! =======
+    // ================================
     text_89: "Hohohoho...",
     text_90: "Mortal, I am RegEx, your ultimate oppponent.",
 
@@ -287,7 +295,7 @@ var texts = {
     // ========== CHOICE ========
     text_107: "107 path",
     text_a107: "Even it is a decision motivated by fear, it is a good one.",
-    text_b107: "",
+    text_b107: "Good choice. The world needs more alarm clock apps.",
     text_c107: "2 are right.",
     // ========== CHOICE ======== //
 
