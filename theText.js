@@ -16,6 +16,7 @@ var Emilie = {
     grumpy: "img/emi-grumpy.png",
     point: "img/emi-point.png",
     ok: "img/emi-ok.png",
+    neutral: "img/emi-neutral.png",
     sad: "img/emi-sad.png",
     surprised: "img/emi-surprised.png",
     suspicious: "img/emi-suspicious.png",
@@ -80,12 +81,12 @@ var BG = {
 };
 
 var sounds = {
-    sleep: "music/bg-room.png",
-    hell: "music/bg-hell.png",
-    round1: "music/Guile.mp3",
-    round2: "",
-    round3: "",
-    final: "",
+    sleep: "music/garden.mp3",
+    magnificient: "music/magnificient.mp3",
+    laharl: "music/laharl.mp3",
+    doyourbest: "music/Doyourbest.mp3",
+    go: "music/go.mp3",
+    whispers: "music/whispers.mp3",
     pop: "music/NSYNC-Pop.mp3",
     scandalous: "music/Mis-Teeq-Scandalous.mp3",
     queen: "music/Queen-Of-The-Night.mp3",
@@ -309,7 +310,8 @@ var texts = {
 
     text_300: "Well well... A shame really. But you leave me no other choice.",
 
-    text_400: "Another mosquito bite...",
-    text_401: "I had a weird dream. It's all foggy.",
-    text_402: "I feel...an urge to do an alarm clock app with cute animals in Javascript.",
+    text_400: "Ugh...",
+    text_401: "Another mosquito bite...",
+    text_402: "I had a weird dream. It's all foggy.",
+    text_403: "I feel...an urge to do an alarm clock app with cute animals in Javascript.",
 };

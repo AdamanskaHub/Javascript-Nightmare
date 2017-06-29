@@ -175,6 +175,12 @@ button:hover {
     margin: -50px 0 0 0;
 }
 
+#restart {
+    width: initial;
+    float: right;
+    margin: -50px 0 0 0;
+}
+
 .char1 {
     height: 400px;
     width: 300px;
@@ -214,3 +220,56 @@ div {
     animation-name: example;
     animation-duration: 4s;
 }*/
+
+#next,
+#replay {
+    margin-right: 20px;
+}
+
+
+/*====================== GAME OVER =====================*/
+
+.main-go {
+    height: 100vh;
+    /*height: 100%???*/
+    width: 100vw;
+    background-color: pink;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: url("img/bg-hell.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#top-part {
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bottom-part {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+#right>img {
+    width: 280px;
+    height: auto;
+}
+
+#top-part>a {
+    font-family: "Amaranth", sans-serif;
+    font-size: 3.5em;
+    color: #ddd5cf;
+    text-decoration: none;
+    background-color: #424f7b;
+    display: inline-block;
+    padding: 5px 10px;
+}

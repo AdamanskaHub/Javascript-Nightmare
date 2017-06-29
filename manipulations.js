@@ -3,17 +3,40 @@
 // ============================================
 
 var currentScene = 0;
+var path_3a, path_3b = false; // I need those
 
-var path_3a, path_3b = false;
-// I need those
+var audio2 = document.createElement('audio');
+
+function djPlayThatSong(song, time, startPos) {
+    audio2.src = song;
+    audio2.play();
+    audio2.pause();
+    audio2.currentTime = startPos;
+    audio2.play();
+    setTimeout(function() {
+        audio2.pause();
+        audio2.currentTime = 0;
+    }, time);
+}
+
+var audio = document.createElement('audio');
+audio.loop = true;
+
+function djplay(song) {
+    audio.src = song;
+    audio.play();
+}
+
+function djpause(song) {
+    audio.src = song;
+    audio.pause();
+}
 
 $(document).ready(function() {
 
     $('button').on('click', function() {
-
         currentScene++;
         // console.log("Button clicked", currentScene);
-
         changeScene(currentScene);
 
     });
@@ -28,8 +51,9 @@ function changeScene(sceneNumber) {
         case 1:
             // ==================
 
-            // djPlayThatSong(sounds.round1, 10000, 0);
-
+            djplay(sounds.sleep);
+            $("audio").animate({ volume: 0.0 }, 5000);
+            $("audio").animate({ volume: 1.0 }, 5000);
             // ==================
             textChange();
             nameChange("Mosquito", '#fff');
@@ -45,6 +69,8 @@ function changeScene(sceneNumber) {
             textChange();
             break;
         case 4:
+            djpause(sounds.sleep);
+            djplay(sounds.magnificient);
             bgChange(BG.hell);
             $("#char2").fadeOut();
             $(".main").effect("shake");
@@ -142,6 +168,9 @@ function changeScene(sceneNumber) {
             char2Change(JSMonster.smile);
             textChange();
             break;
+        case 22:
+            char1Change(Emilie.sad);
+            break;
         case 23:
             nameChange(JSMonster.name, JSMonster.color);
             char2Change(JSMonster.neutral);
@@ -190,6 +219,8 @@ function changeScene(sceneNumber) {
             $(".char2").fadeOut();
             break;
         case 33:
+            djpause(sounds.magnificient);
+            djplay(sounds.laharl);
             char2Change(Ajax.sexy);
             $(".char2").fadeIn();
             nameChange(Ajax.name, Ajax.color);
@@ -345,13 +376,15 @@ function changeScene(sceneNumber) {
             char2Change(Ajax.rage);
             if (path_3a) {
                 $('.char2').animate({ marginRight: "-1000px" }, 1500);
-                textChange("a");
+                textChange("a", 2);
             } else if (path_3b) {
-                textChange("b");
+                textChange("b", 2);
                 $('.char2').fadeOut("slow");
             }
             break;
         case 61:
+            djpause(sounds.laharl);
+            djplay(sounds.doyourbest);
             nameChange(Closure.name, Closure.color);
             char2Change(Closure.neutral);
             char1Change(Emilie.nope);
@@ -390,6 +423,7 @@ function changeScene(sceneNumber) {
             nameChange(Closure.name, Closure.color);
             char1Change(Emilie.ok);
             textChange();
+            djpause(sounds.doyourbest);
             break;
         case 69:
             djPlayThatSong(sounds.pop, 10000, 32);
@@ -477,6 +511,7 @@ function changeScene(sceneNumber) {
             nameChange(Closure.name, Closure.color);
             break;
         case 81:
+            djplay(sounds.doyourbest);
             console.log(musicScore);
             char2Change(Closure.neutral);
             char1Change(Emilie.ok);
@@ -526,6 +561,7 @@ function changeScene(sceneNumber) {
             textChange();
             break;
         case 87:
+            djpause(sounds.doyourbest);
             nameChange(Emilie.name, Emilie.color);
             textChange();
             break;
@@ -534,6 +570,7 @@ function changeScene(sceneNumber) {
             textChange();
             break;
         case 89:
+            djplay(sounds.whispers);
             nameChange(RegEx.name, RegEx.color);
             char2Change(RegEx.smile);
             char1Change(Emilie.nope);
@@ -571,6 +608,7 @@ function changeScene(sceneNumber) {
             break;
         case 95:
             nameChange(RegEx.name, RegEx.color);
+            char1Change(Emilie.yes);
             textChange();
             break;
         case 96:
@@ -580,6 +618,7 @@ function changeScene(sceneNumber) {
             break;
         case 97:
             nameChange(RegEx.name, RegEx.color);
+            char1Change(Emilie.neutral);
             textChange();
             break;
         case 98:
@@ -638,9 +677,12 @@ function changeScene(sceneNumber) {
         case 108:
             nameChange(RegEx.name, RegEx.color);
             textChange();
+            $("#char2").fadeOut(2000);
+            $("#char1").fadeOut(5000);
             break;
-        case 108:
+        case 109:
             changeScene(400);
+
             break;
 
 
@@ -677,20 +719,32 @@ function changeScene(sceneNumber) {
             window.location.href = "gameover.html";
             break;
 
+
         case 400:
-            bgChange(room);
-            char1Change(Emilie.grumpy);
+            djpause(sounds.whispers);
+            djplay(sounds.sleep);
+            bgChange(BG.room);
+            $(".main>img").fadeIn(3000);
+
             nameChange(Emilie.name, Emilie.color);
             textChange();
             break;
         case 401:
+            char1Change(Emilie.grumpy);
+            $("#char1").fadeIn(2000);
             textChange();
             break;
         case 402:
+            textChange();
+            break;
+        case 403:
             char1Change(Emilie.surprised);
-            $("#replay").show();
+            textChange();
+            $("#next").hide();
+            var re = $("<button id='replay'>REPLAY</button>");
+            $(".button-box").append(re);
             $("#replay").on('click', function() {
-                changeScene(0);
+                location.reload();
             });
             break;
 
@@ -801,18 +855,6 @@ function music(soundFile) {
     soundFile.play();
 }
 
-function djPlayThatSong(song, time, startPos) {
-    var audio = document.createElement('audio');
-    audio.src = song;
-    audio.play();
-    audio.pause();
-    audio.currentTime = startPos;
-    audio.play();
-    setTimeout(function() {
-        audio.pause();
-        audio.currentTime = 0;
-    }, time);
-}
 
 // function countingWords(theWord) {
 //     if (theWord < 2) {

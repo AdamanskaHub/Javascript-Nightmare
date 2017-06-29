@@ -229,7 +229,7 @@ function setSceneListeners() {
                 changeScene(80);
                 textChange("c");
                 musicScore++;
-                char2Change(Closure.mic);
+                char2Change(Closure.wtf);
                 $("#next").show();
                 break;
             case 94:
