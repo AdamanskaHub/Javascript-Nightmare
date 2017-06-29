@@ -282,6 +282,16 @@ var texts = {
     text_103: "I keep my promise, leave.",
     text_104: "Finally!",
     text_105: "...but before you go...",
+    text_106: "Will you promise to follow the Javascript path?",
 
-    text_200: "That is game over my dear..."
+    // ========== CHOICE ========
+    text_107: "107 path",
+    text_a107: "Even it is a decision motivated by fear, it is a good one.",
+    text_b107: "",
+    text_c107: "2 are right.",
+    // ========== CHOICE ======== //
+
+    text_200: "That is game over my dear...",
+
+    text_300: "Well well... A shame really. But you live me no other choice."
 };

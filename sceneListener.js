@@ -77,6 +77,12 @@ function setSceneListeners() {
             case 101:
                 martha("b");
                 break;
+            case 106:
+                deleteButtons(button1, button2, button3);
+                changeScene(107);
+                textChange("a");
+                $("#next").show();
+                break;
         }
     });
 
@@ -157,6 +163,12 @@ function setSceneListeners() {
             case 101:
                 martha("b");
                 break;
+            case 106:
+                deleteButtons(button1, button2, button3);
+                changeScene(107);
+                textChange("b");
+                $("#next").show();
+                break;
         }
     });
 
@@ -217,6 +229,13 @@ function setSceneListeners() {
                 break;
             case 101:
                 martha("b");
+                break;
+            case 106:
+                // deleteButtons(button1, button2, button3);
+                // $("#next").show();
+                textChangeSpecial(thePath, 300);
+                //textChange("c");
+
                 break;
         }
     });

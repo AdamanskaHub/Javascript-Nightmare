@@ -595,6 +595,16 @@ function changeScene(sceneNumber) {
             nameChange(RegEx.name, RegEx.color);
             textChange();
             break;
+        case 106:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            addButtons("Yes! (I don't want to end here again!)", "I will. I'll make a Javascript alarm clock with cute animals!", "Nope. Jquery is the only thing I'm willing to use.");
+            $("#next").hide();
+            setSceneListeners();
+            break;
+        case 107:
+            nameChange(RegEx.name, RegEx.color);
+            break;
 
 
 
@@ -609,6 +619,18 @@ function changeScene(sceneNumber) {
             $("#next").show();
             break;
         case 201:
+            // $("index.html").
+            window.location.href = "gameover.html";
+            break;
+
+        case 300:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            char2Change(RegEx.angry);
+            deleteButtons(button1, button2, button3);
+            $("#next").show();
+            break;
+        case 301:
             // $("index.html").
             window.location.href = "gameover.html";
             break;
