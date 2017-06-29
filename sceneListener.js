@@ -25,7 +25,7 @@ function setSceneListeners() {
             case 58:
                 deleteButtons(button1, button2);
                 changeScene(59);
-                $('.char2').animate({ marginRight: "-1000px" }, 1500);
+                $('.char2').animate({ marginRight: "-1000px" }, 3000);
                 textChange("a");
                 $("#next").show();
                 break;
@@ -150,7 +150,7 @@ function setSceneListeners() {
                 deleteRepeat();
                 changeScene(80);
                 textChange("b");
-                char1Change(Emilie.sad);
+                char1Change(Emilie.ok);
                 char2Change(Closure.mic);
                 $("#next").show();
                 break;
@@ -241,7 +241,7 @@ function setSceneListeners() {
             case 106:
                 // deleteButtons(button1, button2, button3);
                 // $("#next").show();
-                textChangeSpecial(thePath, 300);
+                changeScene(300);
                 //textChange("c");
 
                 break;
@@ -261,6 +261,7 @@ function setSceneListeners() {
         }
     });
     $('#button5').on('click', function() {
+        $("#button5").css("background-color:", "#414b72");
         switch (currentScene) {
             case 94:
                 gertrude("b");

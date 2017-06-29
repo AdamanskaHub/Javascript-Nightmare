@@ -1,4 +1,5 @@
-var musicScore = 0;
+var musicScore = 1;
+var musicScore2 = 1;
 var wordOne = 0;
 var wordTwo = 0;
 
@@ -15,6 +16,7 @@ var Emilie = {
     grumpy: "img/emi-grumpy.png",
     point: "img/emi-point.png",
     ok: "img/emi-ok.png",
+    sad: "img/emi-sad.png",
     surprised: "img/emi-surprised.png",
     suspicious: "img/emi-suspicious.png",
     scream: "img/emi-scream.png",
@@ -27,7 +29,7 @@ var Emilie = {
 
 var Voice = {
     name: "Distant voice",
-    color: "#93A4EE"
+    color: "rgb(167, 168, 175)"
 };
 
 var JSMonster = {
@@ -49,7 +51,7 @@ var Ajax = {
     scissors: "img/aj-scissors.png",
     sexy: "img/aj-sexy.png",
     smirk: "img/aj-smirk.png",
-    color: "#93A4EE"
+    color: "rgb(238, 155, 147)"
 };
 
 var Closure = {
@@ -58,14 +60,15 @@ var Closure = {
     smile: "img/cl-smile.png",
     mic: "img/cl-mic.png",
     wtf: "img/cl-wtf.png",
-    color: "#93A4EE"
+    color: "rgb(90, 183, 88)"
 };
 
 var RegEx = {
     name: "RegEx",
-    neutral: "img/reg-smirk.png",
-    angry: "img/js-unhappy.png",
-    color: "#93A4EE"
+    smile: "img/reg-smirk.png",
+    angry: "img/reg-unhappy.png",
+    cool: "img/reg-cool.png",
+    color: "rgb(172, 96, 255)"
 };
 
 var mosquito = "img/mosquito.png";
@@ -107,7 +110,7 @@ var texts = {
     text_11: "You are a DISGRACE! You barely have a grasp of Jquery. You don't even understand what a forEach loop is." + "You still have to understand what a function object is.",
     text_12: "Well, it's hard. I'm doing my best but...I'm doing fine with Jquery.",
     text_13: "Look",
-    text_14: "$('JSLord').css('border', '2px solid #bad455');",
+    text_14: "I can do this : $('JSLord').css('border', '2px solid #bad455');",
     text_15: "I'm the Lord of PURE JAVASCRIPT !!!! STOP THIS BLASPHEMY AT ONCE!!!",
     text_16: "Where was I...",
     // ========== CHOICE ========
@@ -235,13 +238,14 @@ var texts = {
     // ========== CHOICE ======== //
 
     text_81: "Wow, that was cool.",
-    text_82: "You guessed " + musicScore + " songs out of 4.",
+    //text_82: "You guessed " + musicScore2 + " songs out of 4.",
+    text_82: "Well...",
 
     // ========== CHOICE ========
     text_83: "WRONG",
     text_a83: "That's pathetic. I don't know what you're doing with your life but you should listen to more music.",
-    text_b83: "That's acceptable.",
-    text_c83: "You did well.",
+    text_b83: "You did ok.",
+    text_c83: "You did *awesome*!",
     // ========== CHOICE ======== //
 
     text_84: "So... What's up? Have I passed the trial?",
@@ -296,10 +300,16 @@ var texts = {
     text_107: "107 path",
     text_a107: "Even it is a decision motivated by fear, it is a good one.",
     text_b107: "Good choice. The world needs more alarm clock apps.",
-    text_c107: "2 are right.",
+    // text_c107: "2 are right.",
     // ========== CHOICE ======== //
+
+    text_108: "Go with our blessing!",
 
     text_200: "That is game over my dear...",
 
-    text_300: "Well well... A shame really. But you live me no other choice."
+    text_300: "Well well... A shame really. But you leave me no other choice.",
+
+    text_400: "Another mosquito bite...",
+    text_401: "I had a weird dream. It's all foggy.",
+    text_402: "I feel...an urge to do an alarm clock app with cute animals in Javascript.",
 };

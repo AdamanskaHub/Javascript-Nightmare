@@ -37,7 +37,7 @@ function changeScene(sceneNumber) {
             break;
         case 2:
             bgChange(BG.room);
-            nameChange(JSMonster.name, JSMonster.color);
+            nameChange("Evil Voice", JSMonster.color);
             textChange();
             break;
         case 3:
@@ -69,7 +69,6 @@ function changeScene(sceneNumber) {
         case 7:
             nameChange(JSMonster.name, JSMonster.color);
             textChange(undefined, 3);
-            char1Change(Emilie.suspicious);
             break;
         case 8:
             nameChange(Emilie.name, Emilie.color);
@@ -87,7 +86,6 @@ function changeScene(sceneNumber) {
             break;
         case 11:
             nameChange(JSMonster.name, JSMonster.color);
-            char1Change(Emilie.suspicious);
             textChange();
             break;
         case 12:
@@ -142,12 +140,12 @@ function changeScene(sceneNumber) {
         case 21:
             nameChange(JSMonster.name, JSMonster.color);
             char2Change(JSMonster.smile);
-            char1Change(Emilie.sad);
             textChange();
             break;
         case 23:
             nameChange(JSMonster.name, JSMonster.color);
             char2Change(JSMonster.neutral);
+            char1Change(Emilie.sad);
             textChange();
             break;
         case 24:
@@ -158,7 +156,6 @@ function changeScene(sceneNumber) {
         case 25:
             nameChange(JSMonster.name, JSMonster.color);
             char2Change(JSMonster.smile);
-            char1Change(Emilie.suspicious);
             textChange(undefined, 1.5);
             break;
         case 26:
@@ -173,7 +170,7 @@ function changeScene(sceneNumber) {
             break;
         case 28:
             nameChange(Emilie.name, Emilie.color);
-
+            $(".main").effect("shake");
             textChange(undefined, 2);
             break;
         case 29:
@@ -215,12 +212,12 @@ function changeScene(sceneNumber) {
             break;
         case 37:
             nameChange(Ajax.name, Ajax.color);
-            char1Change(Emilie.wtf);
             char2Change(Ajax.sexy);
             textChange();
             break;
         case 38:
             char1Change(Emilie.point);
+            $(".char1").effect("bounce", { times: 28, distance: 10 }, 4000);
             char2Change(Ajax.nope);
             nameChange(Emilie.name, Emilie.color);
             textChange();
@@ -285,7 +282,7 @@ function changeScene(sceneNumber) {
 
         case 50:
             nameChange(Ajax.name, Ajax.color);
-
+            char1Change(Emilie.scream);
             console.log(musicScore);
             break;
         case 51:
@@ -325,6 +322,7 @@ function changeScene(sceneNumber) {
             textChange();
             break;
         case 58:
+            nameChange(Emilie.name, Emilie.color);
             textChange();
             char1Change(Emilie.idea);
             addButtons("Slide into oblivion!",
@@ -354,6 +352,7 @@ function changeScene(sceneNumber) {
             }
             break;
         case 61:
+            nameChange(Closure.name, Closure.color);
             char2Change(Closure.neutral);
             char1Change(Emilie.nope);
             if (path_3a) {
@@ -361,7 +360,6 @@ function changeScene(sceneNumber) {
             } else if (path_3b) {
                 $(".char2").fadeIn("slow");
             }
-            nameChange(Closure.name, Closure.color);
             textChange();
             break;
         case 62:
@@ -380,8 +378,12 @@ function changeScene(sceneNumber) {
             break;
         case 66:
             char2Change(Closure.mic);
-            char1Change(Emilie.yes);
             nameChange(Closure.name, Closure.color);
+            textChange();
+            break;
+        case 67:
+            nameChange(Emilie.name, Emilie.color);
+            char1Change(Emilie.yes);
             textChange();
             break;
         case 68:
@@ -390,7 +392,7 @@ function changeScene(sceneNumber) {
             textChange();
             break;
         case 69:
-            djPlayThatSong(sounds.pop, 10000, 33);
+            djPlayThatSong(sounds.pop, 10000, 32);
             char2Change(Closure.smile);
             char1Change(Emilie.thinking);
             nameChange(Closure.name, Closure.color);
@@ -450,12 +452,12 @@ function changeScene(sceneNumber) {
         case 77:
             console.log(musicScore);
             char2Change(Closure.mic);
-            char1Change(Emilie.wtf);
             nameChange(Closure.name, Closure.color);
             textChange();
             break;
         case 78:
             nameChange(Emilie.name, Emilie.color);
+            char1Change(Emilie.wtf);
             textChange();
             break;
 
@@ -483,6 +485,8 @@ function changeScene(sceneNumber) {
             break;
         case 82:
             nameChange(Closure.name, Closure.color);
+            console.log("musicScore = " + musicScore)
+            var musicScore2 = musicScore;
             char2Change(Closure.neutral);
             textChange();
             break;
@@ -526,7 +530,9 @@ function changeScene(sceneNumber) {
             textChange();
             break;
         case 88:
-
+            nameChange(Emilie.name, Emilie.color);
+            textChange();
+            break;
         case 89:
             nameChange(RegEx.name, RegEx.color);
             char2Change(RegEx.smile);
@@ -582,6 +588,7 @@ function changeScene(sceneNumber) {
             break;
         case 99:
             nameChange(Emilie.name, Emilie.color);
+            char1Change(Emilie.point);
             textChange();
             break;
         case 100:
@@ -590,6 +597,7 @@ function changeScene(sceneNumber) {
             break;
         case 101:
             nameChange(RegEx.name, RegEx.color);
+            char1Change(Emilie.thinking);
             textChange();
             addButtons("SENDING", "SETTING", "WARRIOR", "OFFLINE", "WRITING", "WARNING", "TESTING", "ACQUIRE", "WELCOME");
             $("#next").hide();
@@ -599,6 +607,7 @@ function changeScene(sceneNumber) {
         case 102:
             nameChange(RegEx.name, RegEx.color);
             char2Change(RegEx.cool);
+            char1Change(Emilie.ok);
             textChange();
             break;
         case 103:
@@ -608,6 +617,7 @@ function changeScene(sceneNumber) {
             break;
         case 104:
             nameChange(Emilie.name, Emilie.color);
+            char1Change(Emilie.yes);
             textChange();
             break;
         case 105:
@@ -624,6 +634,13 @@ function changeScene(sceneNumber) {
             break;
         case 107:
             nameChange(RegEx.name, RegEx.color);
+            break;
+        case 108:
+            nameChange(RegEx.name, RegEx.color);
+            textChange();
+            break;
+        case 108:
+            changeScene(400);
             break;
 
 
@@ -644,15 +661,37 @@ function changeScene(sceneNumber) {
             break;
 
         case 300:
+            $("#next").show();
+            // $("#next").on('click', function() {
+            //     textChangeSpecial("", 301);
+            //     console.log("va à 301!");
+            // });
             nameChange(RegEx.name, RegEx.color);
             textChange();
             char2Change(RegEx.angry);
             deleteButtons(button1, button2, button3);
-            $("#next").show();
+
             break;
         case 301:
             // $("index.html").
             window.location.href = "gameover.html";
+            break;
+
+        case 400:
+            bgChange(room);
+            char1Change(Emilie.grumpy);
+            nameChange(Emilie.name, Emilie.color);
+            textChange();
+            break;
+        case 401:
+            textChange();
+            break;
+        case 402:
+            char1Change(Emilie.surprised);
+            $("#replay").show();
+            $("#replay").on('click', function() {
+                changeScene(0);
+            });
             break;
 
 
